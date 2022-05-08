@@ -1,5 +1,5 @@
 <template>
-  <section class="v-section-introduction fp-with-gutter fp-grid-container">
+  <section class="v-section-introduction fp-section--default fp-with-gutter fp-grid-container">
     <div class="fp-with-gutter fp-grid-coll-main fp-remove-child-spacing">
       <h3>Faire ensemble</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda atque aut consequatur corporis deserunt, eos esse eveniet, expedita facere harum inventore, natus nihil nobis non omnis quo. Ipsa, iusto.</p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="v-app-footer">
+  <div class="v-app-footer fp-section--default">
     <div class="fp-grid-container fp-with-gutter">
       <div class="fp-with-gutter fp-grid-coll-main fp-remove-child-spacing">
         <p>

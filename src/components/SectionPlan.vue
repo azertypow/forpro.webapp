@@ -1,5 +1,5 @@
 <template>
-  <div class="v-section-plan fp-with-gutter fp-grid-container">
+  <div class="v-section-plan fp-section--default fp-with-gutter fp-grid-container">
     <div
         class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-main"
     >

@@ -28,9 +28,10 @@ export default defineComponent({
   background-color: var(--color-ternary);
   background-size: cover;
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
 
   .v-section-header__text {
+    pointer-events: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,6 +53,7 @@ export default defineComponent({
 
   .v-section-header__graphic {
     position: static;
+    pointer-events: none;
   }
 
   .v-section-header__icon-right {
@@ -68,7 +70,7 @@ export default defineComponent({
 
   .v-section-header__icon-bottom {
     position: absolute;
-    bottom: -100px;
+    bottom: 0;
     left: calc(100% / 12);
     width: calc(100% / 12 * 5);
   }
