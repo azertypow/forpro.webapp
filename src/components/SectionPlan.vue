@@ -15,7 +15,7 @@
           ref="planContainer"
       >
         <img class="v-section-plan__plan"
-             src="src/assets/plan--min@2x.png"
+             src="../assets/plan--min@2x.png"
              alt="plan"
              :style="{
                 transform: transformValue,
@@ -59,11 +59,11 @@ export default defineComponent({
   },
 
   computed: {
-    distance() { return this.height },
+    distance(): number { return this.height },
 
-    topFromBottomOfScreen() { return this.top - window.innerHeight},
+    topFromBottomOfScreen(): number { return this.top - window.innerHeight},
 
-    percentDistance() {
+    percentDistance(): number {
       const value = this.topFromBottomOfScreen * -100 / this.distance
 
       if( value < 0 ) return 0

@@ -19,10 +19,10 @@
 import {defineComponent} from "vue"
 
 export default defineComponent({
-  props: {
-    // name: String,
-    // msg: {type: String, required: true}
-  },
+  // props: {
+  //   // name: String,
+  //   // msg: {type: String, required: true}
+  // },
 
 })</script>
 
