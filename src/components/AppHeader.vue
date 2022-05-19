@@ -3,7 +3,7 @@
 
     <div
         class="fp-logo v-app-header__logo fp-with-gutter"
-    >FondationForPro</div>
+    >LearningLab</div>
 
     <nav
         class="v-app-header__nav"
