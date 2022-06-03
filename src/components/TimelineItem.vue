@@ -30,9 +30,6 @@ import ImageMask from "@/components/ImageMask.vue"
 
 export default defineComponent({
   components: {ImageMask},
-  props: {
-  },
-
 })</script>
 
 <style lang="scss">
