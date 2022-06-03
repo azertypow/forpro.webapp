@@ -1,10 +1,10 @@
 <template>
   <div class="v-app-footer fp-section--default">
     <div class="fp-grid-container fp-with-gutter">
-      <div class="fp-with-gutter fp-grid-coll-main fp-remove-child-spacing">
+      <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
+        <h4>LearningLab</h4>
         <p>
-          <strong>LearningLab</strong>
-          <br>Rte de la Galaise 19
+          Rte de la Galaise 19
           <br>1228 Plan-les-Ouates
           <br>+41 22 000 00 00
         </p>
@@ -16,17 +16,22 @@
           <br>linkedin
         </p>
       </div>
-      <div class="fp-with-gutter fp-grid-coll-main fp-remove-child-spacing">
+      <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24">
+        <h4>Horaire d'ouverture</h4>
         <p>
-          <strong>Horaire d'ouverture</strong>
-          <br>lundi au vendredi
+          lundi au vendredi
           <br>de 8h00 à 17h00
         </p>
 
+        <h4>Accès</h4>
         <p>
-          <strong>Accès</strong>
-          <br>Bus
+          Bus
           <br>Tram
+        </p>
+
+        <h3>Newsletter</h3>
+        <p>
+          Découvrez nos dernières actualités !
         </p>
       </div>
     </div>

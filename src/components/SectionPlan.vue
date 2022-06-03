@@ -1,9 +1,9 @@
 <template>
-  <div class="v-section-plan fp-section--default fp-with-gutter fp-grid-container">
+  <section class="v-section-plan fp-section--default fp-with-gutter fp-grid-container">
     <div
-        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-main"
+        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24"
     >
-      <h3>Les activités</h3>
+      <h1>Les activités</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem dignissimos doloribus, eius est ex iure quis vitae voluptate. Ad adipisci, alias dolore excepturi iure minima mollitia officiis unde voluptas.</p>
     </div>
 
@@ -23,7 +23,7 @@
         >
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

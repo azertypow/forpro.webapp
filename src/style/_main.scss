@@ -1,5 +1,8 @@
 $breakpoint--mobile: 960px;
 
-@import "./font-loader";
-@import "./base.css";
+@import "./00-font-loader";
+@import "./01-typography";
+@import "./02-grid";
+
+@import "./base";
 @import "./fp-global";

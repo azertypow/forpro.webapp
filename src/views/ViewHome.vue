@@ -5,6 +5,8 @@
         id="header"
     ></section-header>
 
+    <section-timeline></section-timeline>
+
     <section-introduction></section-introduction>
 
     <section-plan
@@ -19,9 +21,10 @@ import {defineComponent} from "vue"
 import SectionIntroduction from "@/components/SectionIntroduction.vue"
 import SectionHeader from "@/components/SectionHeader.vue"
 import SectionPlan from "@/components/SectionPlan.vue"
+import SectionTimeline from "@/components/SectionTimeline.vue"
 
 export default defineComponent({
-  components: {SectionPlan, SectionHeader, SectionIntroduction},
+  components: {SectionTimeline, SectionPlan, SectionHeader, SectionIntroduction},
 
   props: {
     name: String,
