@@ -2,7 +2,9 @@
   <div class="v-timeline-item fp-with-gutter fp-grid-container"
        :class="{
           'is-alternate': styleAlternate,
+          'is-active': isActive,
        }"
+       ref="timelineElement"
   >
 
     <div class="v-timeline-item__graphic">
@@ -51,6 +53,20 @@ import type {IFPApiSectionTimelineItems} from "@/froproApi/FPApi"
 
 export default defineComponent({
   components: {ImageMask},
+
+  data() {
+    return {
+      isActive: false,
+    }
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('scroll', () => {
+        this.isActive = this.$refs.timelineElement.getBoundingClientRect().top - (window.innerHeight / 2) < 0
+      })
+    })
+  },
 
   props: {
     FPApiSectionTimelineItems: {
@@ -108,6 +124,17 @@ export default defineComponent({
   .v-timeline-item__title {
     color: var(--color-main);
     margin: 0;
+    position: relative;
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    opacity: 0;
+    transform: translate(0, 2rem);
+  }
+
+  .v-timeline-item__content {
+    position: relative;
+    transition: transform 500ms 100ms ease-in-out, opacity 500ms 100ms ease-in-out;
+    opacity: 0;
+    transform: translate(0, 2rem);
   }
 
   .v-timeline-item__date {
@@ -117,6 +144,10 @@ export default defineComponent({
 
   .v-timeline-item__image {
     margin-top: 2rem;
+    position: relative;
+    transition: transform 500ms 200ms ease-in-out, opacity 500ms 200ms ease-in-out;
+    opacity: 0;
+    transform: translate(0, 2rem);
   }
 
   &.is-alternate {
@@ -126,6 +157,19 @@ export default defineComponent({
     }
     .v-timeline-item__graphic__line {
       left: 0;
+    }
+  }
+
+  &.is-active {
+    .v-timeline-item__graphic__circle {
+      background-color: var(--color-ternary);
+    }
+
+    .v-timeline-item__title,
+    .v-timeline-item__content,
+    .v-timeline-item__image {
+      opacity: 1;
+      transform: translate(0, 0);
     }
   }
 }
