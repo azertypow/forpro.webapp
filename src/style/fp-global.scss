@@ -3,6 +3,11 @@
   letter-spacing: -.025em;
 }
 
+.fp-max-width {
+  max-width: 1400px;
+  margin: auto;
+}
+
 .fp-with-gutter {
   box-sizing: border-box;
   padding-left: var(--unit-gutter-half);

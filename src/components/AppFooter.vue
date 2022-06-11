@@ -1,7 +1,7 @@
 <template>
   <div class="v-app-footer fp-section--default">
-    <div class="fp-grid-container fp-with-gutter">
-      <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
+    <div class="fp-grid-container fp-with-gutter fp-max-width">
+      <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-12-24">
         <h4>LearningLab</h4>
         <p>
           Rte de la Galaise 19
@@ -16,7 +16,7 @@
           <br>linkedin
         </p>
       </div>
-      <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24">
+      <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-12-24">
         <h4>Horaire d'ouverture</h4>
         <p>
           lundi au vendredi

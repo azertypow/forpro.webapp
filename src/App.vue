@@ -4,9 +4,9 @@
       class="v-app"
   >
 
-    <app-header
-        class="v-app__header"
-    ></app-header>
+    <div class="v-app__header">
+      <app-header></app-header>
+    </div>
 
     <RouterView/>
 

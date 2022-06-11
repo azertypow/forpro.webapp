@@ -1,9 +1,9 @@
 <template>
-  <header class="v-app-header fp-with-gutter">
+  <header class="v-app-header fp-with-gutter fp-max-width">
 
     <div
         class="fp-logo v-app-header__logo fp-with-gutter"
-    >LearningLab</div>
+    >ForPro</div>
 
     <nav
         class="v-app-header__nav"

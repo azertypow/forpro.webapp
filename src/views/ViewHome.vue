@@ -5,13 +5,19 @@
         id="header"
     ></section-header>
 
-    <section-timeline></section-timeline>
-
     <section-introduction></section-introduction>
 
     <section-plan
         id="plan"
     ></section-plan>
+
+    <div
+        v-for="section of timelineSections"
+    >
+      <section-timeline
+          :FPApiSectionTimeline="section"
+      ></section-timeline>
+    </div>
 
   </main>
 </template>
@@ -22,14 +28,23 @@ import SectionIntroduction from "@/components/SectionIntroduction.vue"
 import SectionHeader from "@/components/SectionHeader.vue"
 import SectionPlan from "@/components/SectionPlan.vue"
 import SectionTimeline from "@/components/SectionTimeline.vue"
+import {useForProDataStore} from "@/stores/forProData"
+import type {IFPApiSectionTimeline} from "@/froproApi/FPApi"
 
 export default defineComponent({
   components: {SectionTimeline, SectionPlan, SectionHeader, SectionIntroduction},
 
-  props: {
-    name: String,
-    // msg: {type: String, required: true}
+  data() {
+    return {
+      forProDataStore: useForProDataStore()
+    }
   },
+
+  computed: {
+    timelineSections(): IFPApiSectionTimeline[] {
+      return this.forProDataStore.dataFPApi.sections.filter(value => {return value.type === 'timeline'}) as IFPApiSectionTimeline[]
+    }
+  }
 
 })</script>
 

@@ -24,15 +24,17 @@ export default defineComponent({
   background-color: var(--color-ternary);
   background-size: cover;
   position: relative;
-  //overflow: hidden;
+
 
   .v-section-header__text {
     pointer-events: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: calc( 100vh - var(--header-height) );
+    //min-height: calc( 100vh - var(--header-height) );
     box-sizing: border-box;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   h1 {
