@@ -63,7 +63,7 @@ export default defineComponent({
   mounted() {
     this.$nextTick(() => {
       window.addEventListener('scroll', () => {
-        this.isActive = this.$refs.timelineElement.getBoundingClientRect().top - (window.innerHeight / 2) < 0
+        this.isActive = (this.$refs.timelineElement as HTMLElement).getBoundingClientRect().top - (window.innerHeight / 2) < 0
       })
     })
   },
