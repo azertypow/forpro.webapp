@@ -8,14 +8,14 @@
     </div>
 
     <div
-        class="fp-with-gutter fp-remove-child-spacing"
+        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-24-24"
     >
       <div
           class="v-section-plan__plan-container"
           ref="planContainer"
       >
         <img class="v-section-plan__plan"
-             src="../assets/plan--min@2x.png"
+             src="../assets/220613_ForPro_Plan-V1.svg"
              alt="plan"
              :style="{
                 transform: transformValue,
