@@ -62,10 +62,23 @@ export default defineComponent({
 
   mounted() {
     this.$nextTick(() => {
-      window.addEventListener('scroll', () => {
-        this.isActive = (this.$refs.timelineElement as HTMLElement).getBoundingClientRect().top - (window.innerHeight / 2) < 0
-      })
+      window.addEventListener('scroll', this.addActiveClass)
     })
+  },
+
+  unmounted() {
+    this.removeScrollListener()
+  },
+
+  methods: {
+    addActiveClass() {
+      if ( (this.$refs.timelineElement as HTMLElement).getBoundingClientRect().top - (window.innerHeight / 2) > 0) return
+
+      this.isActive = true
+      this.removeScrollListener()
+    },
+
+    removeScrollListener() { window.removeEventListener('scroll', this.addActiveClass) }
   },
 
   props: {
