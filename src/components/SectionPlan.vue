@@ -110,6 +110,6 @@ export default defineComponent({
 }
 
 .v-section-plan__plan-container {
-  margin-top: 5rem;
+  padding-top: 1rem;
 }
 </style>
