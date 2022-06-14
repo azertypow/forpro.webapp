@@ -1,5 +1,7 @@
 <template>
-  <section class="v-section-header fp-with-gutter">
+  <section
+      class="v-section-header fp-with-gutter"
+  >
     <div class="v-section-header__text fp-remove-child-spacing">
       <h1 class="v-section-header__title fp-text-xxl">Learning Lab</h1>
       <h2 class="fp-with-gutter fp-text-xl v-section-header__subtitle">Viens construire ta voie professionnelle&nbsp;!</h2>
@@ -33,8 +35,8 @@ export default defineComponent({
     justify-content: center;
     //min-height: calc( 100vh - var(--header-height) );
     box-sizing: border-box;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top:    10vw;
+    padding-bottom: 10vw;
   }
 
   h1 {

@@ -8,8 +8,13 @@
     <nav
         class="v-app-header__nav"
     >
-      <RouterLink class="fp-with-gutter" to="/#header">Accueil</RouterLink>
-      <RouterLink class="fp-with-gutter" to="/#plan">Plan</RouterLink>
+
+      <RouterLink
+          v-for="sectionAnchor of forProDataStore.ArrayOfSectionAnchor"
+          class="fp-with-gutter"
+          :to="`/#${sectionAnchor}`"
+      >{{sectionAnchor}}</RouterLink>
+
       <div        class="fp-with-gutter" >
         <div class="v-app-header__toggle-theme" ></div>
       </div>
@@ -19,8 +24,16 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
+import {useForProDataStore} from "@/stores/forProData"
 
 export default defineComponent({
+
+  data() {
+    return {
+      forProDataStore: useForProDataStore()
+    }
+  }
+
 })</script>
 
 <style lang="scss">

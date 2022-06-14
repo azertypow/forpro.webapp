@@ -7,7 +7,8 @@ export const useForProDataStore = defineStore({
     dataFPApi: {
       title: "",
       sections: [],
-    }
+    },
+    ArrayOfSectionAnchor: [],
   } as IForProDataStore),
   getters: {
   },
@@ -16,4 +17,5 @@ export const useForProDataStore = defineStore({
 
 export interface IForProDataStore {
   dataFPApi: IFPApi
+  ArrayOfSectionAnchor: string[]
 }

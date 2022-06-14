@@ -15,7 +15,7 @@
           ref="planContainer"
       >
         <img class="v-section-plan__plan"
-             src="../assets/220613_ForPro_Plan-V2.svg"
+             src="../assets/ForPro_Plan.svg"
              alt="plan"
              :style="{
                 transform: transformValue,
