@@ -97,6 +97,8 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-timeline-item {
   align-items: center;
   padding-top: 1rem;
@@ -183,6 +185,17 @@ export default defineComponent({
     .v-timeline-item__image {
       opacity: 1;
       transform: translate(0, 0);
+    }
+  }
+
+  @media all and (max-width: $breakpoint--small) {
+
+    .v-timeline-item__graphic__line,
+    .v-timeline-item__graphic__circle {
+      top: 0 !important;
+      left: 50% !important;
+      right: auto !important;
+      transform: translate(-50%, -50%) !important;
     }
   }
 }

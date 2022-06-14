@@ -49,6 +49,8 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-section-timeline {
   .v-section-timeline__header {
     padding-bottom: 1rem;
@@ -72,6 +74,21 @@ export default defineComponent({
   .v-section-timeline__items__item-container {
     &:nth-child(2) {
       margin-top: 10rem;
+    }
+
+    @media all and (max-width: $breakpoint--small) {
+      width: 100%;
+      background: white;
+
+      .v-timeline-item__date,
+      .v-timeline-item__title,
+      .v-timeline-item__content {
+        background: white;
+      }
+
+      &+.v-section-timeline__items__item-container {
+        margin-top: 2rem;
+      }
     }
   }
 }
