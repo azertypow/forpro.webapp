@@ -18,9 +18,19 @@
              src="../assets/ForPro_Plan.svg"
              alt="plan"
              :style="{
-                transform: transformValue,
+                transform:  transitionStyleValue.transformValue,
+                opacity:    transitionStyleValue.opacityValue,
              }"
         >
+
+<!--        <img class="v-section-plan__plan"-->
+<!--             src="../assets/ForPro_Plan&#45;&#45;old.svg"-->
+<!--             alt="plan"-->
+<!--             :style="{-->
+<!--                transform: transformValue,-->
+<!--             }"-->
+<!--        >-->
+
       </div>
     </div>
   </section>
@@ -30,11 +40,6 @@
 import {defineComponent} from "vue"
 
 export default defineComponent({
-  // props: {
-  //   name: String,
-  //   msg: {type: String, required: true}
-  // },
-
   data() {
     return {
       top:    NaN,
@@ -59,7 +64,7 @@ export default defineComponent({
   },
 
   computed: {
-    distance(): number { return this.height },
+    distance(): number { return this.height * 1.5},
 
     topFromBottomOfScreen(): number { return this.top - window.innerHeight},
 
@@ -72,18 +77,24 @@ export default defineComponent({
       return value
     },
 
-    transformValue(): string {
+    transitionStyleValue(): {
+      transformValue: string
+      opacityValue:   string
+    } {
       const translateY = ((100 - this.percentDistance) * -1) / 2
       const scale = (value: number) => {
         const in_min  = 0
         const in_max  = 100
-        const out_min = .8
+        const out_min = .85
         const out_max = 1
 
         return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
       }
 
-      return `translate(0, ${translateY}%) scale(${scale(this.percentDistance)})`
+      return {
+        transformValue: `translate(0, ${translateY}%) scale(${scale(this.percentDistance)})`,
+        opacityValue: `${this.percentDistance / 100}`,
+      }
     },
   },
 
