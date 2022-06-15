@@ -6,7 +6,7 @@
     >ForPro</div>
 
     <div
-        @click="() => {this.forProDataStore.toggleMenuStatus()}"
+        @click="() => {forProDataStore.toggleMenuStatus()}"
         class="v-app-header__toggle-menu"
         :class="{
           'menu-is-open': forProDataStore.menuIsOpen
