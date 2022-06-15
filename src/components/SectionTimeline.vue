@@ -69,6 +69,11 @@ export default defineComponent({
     height: 100%;
     width: 4px;
     background-color: var(--color-secondary);
+
+    @media all and (max-width: $breakpoint--small) {
+      left:  var(--unit-gutter-half);
+      transform: none;
+    }
   }
 
   .v-section-timeline__items__item-container {
@@ -77,14 +82,7 @@ export default defineComponent({
     }
 
     @media all and (max-width: $breakpoint--small) {
-      width: 100%;
-      background: white;
-
-      .v-timeline-item__date,
-      .v-timeline-item__title,
-      .v-timeline-item__content {
-        background: white;
-      }
+      width:        100%;
 
       &+.v-section-timeline__items__item-container {
         margin-top: 2rem;

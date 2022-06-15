@@ -193,9 +193,9 @@ export default defineComponent({
     .v-timeline-item__graphic__line,
     .v-timeline-item__graphic__circle {
       top: 0 !important;
-      left: 50% !important;
+      left: 0 !important;
       right: auto !important;
-      transform: translate(-50%, -50%) !important;
+      transform: translate(0%, -50%) !important;
     }
   }
 }
