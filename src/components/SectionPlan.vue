@@ -7,29 +7,33 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem dignissimos doloribus, eius est ex iure quis vitae voluptate. Ad adipisci, alias dolore excepturi iure minima mollitia officiis unde voluptas.</p>
     </div>
 
+    <div class="fp-grid-coll-12-24" ></div>
+
+    <div class="fp-grid-coll-1-24" ></div>
     <div
-        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-24-24"
+        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-22-24"
     >
       <div
           class="v-section-plan__plan-container"
           ref="planContainer"
       >
+<!--        <img class="v-section-plan__plan"-->
+<!--             src="../assets/ForPro_Plan.svg"-->
+<!--             alt="plan"-->
+<!--             :style="{-->
+<!--                transform:  transitionStyleValue.transformValue,-->
+<!--                opacity:    transitionStyleValue.opacityValue,-->
+<!--             }"-->
+<!--        >-->
+
         <img class="v-section-plan__plan"
-             src="../assets/ForPro_Plan.svg"
+             src="../assets/ForPro_Plan--old.svg"
              alt="plan"
              :style="{
-                transform:  transitionStyleValue.transformValue,
+                transform: transitionStyleValue.transformValue,
                 opacity:    transitionStyleValue.opacityValue,
              }"
         >
-
-<!--        <img class="v-section-plan__plan"-->
-<!--             src="../assets/ForPro_Plan&#45;&#45;old.svg"-->
-<!--             alt="plan"-->
-<!--             :style="{-->
-<!--                transform: transformValue,-->
-<!--             }"-->
-<!--        >-->
 
       </div>
     </div>

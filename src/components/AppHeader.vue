@@ -15,9 +15,9 @@
           :to="`/#${sectionAnchor}`"
       >{{sectionAnchor}}</RouterLink>
 
-      <div        class="fp-with-gutter" >
-        <div class="v-app-header__toggle-theme" ></div>
-      </div>
+<!--      <div        class="fp-with-gutter" >-->
+<!--        <div class="v-app-header__toggle-theme" ></div>-->
+<!--      </div>-->
     </nav>
   </header>
 </template>

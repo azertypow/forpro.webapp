@@ -39,7 +39,7 @@ export default defineComponent({
     left: 0;
     width: 100%;
     background: var(--color-background);
-    z-index: 100000;
+    z-index: 100000000000;
     //box-shadow: 0 0 20px 10px var(--color-background);
   }
 }

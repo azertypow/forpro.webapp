@@ -3,7 +3,7 @@
       class="v-section-header fp-with-gutter"
   >
     <div class="v-section-header__text fp-remove-child-spacing">
-      <h1 class="v-section-header__title fp-text-xxl">Learning Lab</h1>
+      <h1 class="v-section-header__title fp-text-xxl">ForPro</h1>
       <h2 class="fp-with-gutter fp-text-xl v-section-header__subtitle">Viens construire ta voie professionnelle&nbsp;!</h2>
     </div>
 
