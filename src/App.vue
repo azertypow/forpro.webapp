@@ -48,7 +48,7 @@ export default defineComponent({
     left: 0;
     width: 100%;
     background: var(--color-background);
-    z-index: 100000000000;
+    z-index: 1000;
   }
 
   [class*='v-view-'],

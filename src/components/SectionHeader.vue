@@ -42,13 +42,13 @@ export default defineComponent({
   h1 {
     color: var(--color-main);
     position: relative;
-    z-index: 1000000000;
+    z-index: 10;
   }
 
   h2 {
     color: var(--color-white);
     position: relative;
-    z-index: 100;
+    z-index: 10;
   }
 
   .v-section-header__graphic {
@@ -64,7 +64,6 @@ export default defineComponent({
     top: 0;
     right: 0;
     transform: translate(28%, -25%);
-    z-index: 100000;
     border-radius: 100%;
     background-image: url('/images/FORPRO_01_Entreprise_web.jpg');
     background-size: cover;
