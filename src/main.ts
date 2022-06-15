@@ -39,6 +39,6 @@ useForProDataStore().dataFPApi = {
           text: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias architecto at aut commodi dolorem dolorum ducimus eligendi expedita id iusto, modi nobis, quaerat quod reprehenderit similique vel voluptas voluptatem.</p>',
         }
       ],
-    }
-    ]
+    },
+  ]
 }
