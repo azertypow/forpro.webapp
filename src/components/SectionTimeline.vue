@@ -52,6 +52,8 @@ export default defineComponent({
 @import "../style/00-sass_parameters";
 
 .v-section-timeline {
+  background-color: var(--color-background);
+
   .v-section-timeline__header {
     padding-bottom: 1rem;
   }

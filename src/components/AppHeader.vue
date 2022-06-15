@@ -5,20 +5,34 @@
         class="fp-logo v-app-header__logo fp-with-gutter"
     >ForPro</div>
 
-    <nav
-        class="v-app-header__nav"
+    <div
+        @click="() => {this.forProDataStore.toggleMenuStatus()}"
+        class="v-app-header__toggle-menu"
+        :class="{
+          'menu-is-open': forProDataStore.menuIsOpen
+        }"
     >
+      <div class="v-app-header__toggle-menu__ui-line"></div>
+      <div class="v-app-header__toggle-menu__ui-line"></div>
+    </div>
 
-      <RouterLink
-          v-for="sectionAnchor of forProDataStore.ArrayOfSectionAnchor"
-          class="fp-with-gutter"
-          :to="`/#${sectionAnchor}`"
-      >{{sectionAnchor}}</RouterLink>
+    <transition
+        name="fade-from-right"
+    >
+      <nav
+          class="v-app-header__nav fp-with-gutter"
+          v-if="forProDataStore.menuIsOpen"
+      >
+        <RouterLink
+            v-for="sectionAnchor of forProDataStore.ArrayOfSectionAnchor"
+            class="fp-with-gutter fp-with-row"
+            :to="`/#${sectionAnchor}`"
+            @click="forProDataStore.menuIsOpen = false"
+        >{{sectionAnchor}}</RouterLink>
+      </nav>
+    </transition>
 
-<!--      <div        class="fp-with-gutter" >-->
-<!--        <div class="v-app-header__toggle-theme" ></div>-->
-<!--      </div>-->
-    </nav>
+
   </header>
 </template>
 
@@ -44,7 +58,14 @@ export default defineComponent({
   justify-content: space-between;
 
   .v-app-header__nav {
+    position: fixed;
     display: flex;
+    flex-direction: column;
+    top: var(--header-height);
+    right: 0;
+    width: auto;
+    height: calc(100% - var(--header-height) );
+    background-color: var(--color-background);
   }
 
   .v-app-header__toggle-theme {
@@ -57,6 +78,62 @@ export default defineComponent({
 
   .v-app-header__logo {
     color: var(--color-secondary);
+  }
+
+  .v-app-header__toggle-menu {
+    $bouton-size: 1rem;
+
+    cursor: pointer;
+    position: relative;
+    width: $bouton-size;
+    height: $bouton-size;
+    padding: calc( var(--unit-gutter-half) / 2 );
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .v-app-header__toggle-menu__ui-line {
+      width: 100%;
+      height: 2px;
+      background: var(--color-secondary);
+      position: relative;
+      top: 0;
+      left: 0;
+      transition: transform 250ms ease-in-out;
+      transform-origin: center left;
+
+      &:nth-child(1) {
+        transform: translateY(calc( #{$bouton-size} / 5 * 2 ));
+      }
+
+      &:nth-child(2) {
+        transform: translateY(calc( #{$bouton-size} / 5 * 3 ));
+      }
+    }
+
+    &.menu-is-open {
+      .v-app-header__toggle-menu__ui-line {
+        &:nth-child(1) {
+          transform: translate( calc( #{$bouton-size} / 10 * 1 ), calc( #{$bouton-size} / 5 * 1 ) ) rotateZ(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: translate( calc( #{$bouton-size} / 10 * 1 ), calc( #{$bouton-size} / 5 * 4 ) )            rotateZ(-45deg);
+        }
+      }
+    }
+  }
+
+  .fade-from-right-enter-active,
+  .fade-from-right-leave-active,
+  {
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+  }
+  .fade-from-right-enter-from,
+  .fade-from-right-leave-to,
+  {
+    opacity: 0;
+    transform: translate(25%);
   }
 }
 

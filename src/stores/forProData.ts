@@ -9,13 +9,19 @@ export const useForProDataStore = defineStore({
       sections: [],
     },
     ArrayOfSectionAnchor: [],
+    menuIsOpen: false,
   } as IForProDataStore),
   getters: {
   },
-  actions: {}
+  actions: {
+    toggleMenuStatus() {
+      this.menuIsOpen = !this.menuIsOpen
+    }
+  }
 })
 
 export interface IForProDataStore {
   dataFPApi: IFPApi
   ArrayOfSectionAnchor: string[]
+  menuIsOpen: boolean
 }

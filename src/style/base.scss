@@ -12,6 +12,7 @@
   --color-ternary--dark:    hsl(32, 100%, 25%);
 
   --unit-horizontal:  25px;
+  --unit-horizontal-half: calc( var(--unit-horizontal) / 2 );
   --unit-gutter:      25px;
   --unit-gutter-half: calc( var(--unit-gutter) / 2 );
 
@@ -29,13 +30,14 @@
 html {
   font-size: var(--unit-horizontal);
   overflow-x: hidden;
+  background: black;
 }
 
 body {
   @extend .fp-text-p;
   margin: 0;
   color: var(--color-text);
-  background: var(--color-background);
+  background: black;
   transition: color 0.5s, background-color 0.5s;
   font-family: "Junka", serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

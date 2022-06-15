@@ -23,15 +23,11 @@ import ImageMask from "@/components/ImageMask.vue"
 export default defineComponent({
   components: {ImageMask}
 
-  // props: {
-  //   // name: String,
-  //   // msg: {type: String, required: true}
-  // },
-
 })</script>
 
 <style lang="scss">
 .v-section-introduction {
+  background-color: var(--color-background);
 
 
   .v-section-introduction__cover {

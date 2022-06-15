@@ -106,6 +106,8 @@ export default defineComponent({
 
 <style lang="scss">
 .v-section-plan {
+  background-color: var(--color-background);
+
   .v-section-plan__plan {
     display: block;
     width: 100%;

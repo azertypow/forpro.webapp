@@ -2,6 +2,9 @@
   <div
       data-theme="dark"
       class="v-app"
+      :class="{
+        'menu-is-open': forProDataStore.menuIsOpen
+      }"
   >
 
     <div class="v-app__header">
@@ -19,13 +22,19 @@
 import {defineComponent} from "vue"
 import AppHeader from "@/components/AppHeader.vue"
 import AppFooter from "@/components/AppFooter.vue"
+import {useForProDataStore} from "@/stores/forProData"
 
 export default defineComponent({
   components: {AppFooter, AppHeader},
   props: {
     name: String,
-    // msg: {type: String, required: true}
   },
+
+  data() {
+    return {
+      forProDataStore: useForProDataStore(),
+    }
+  }
 
 })</script>
 
@@ -40,7 +49,20 @@ export default defineComponent({
     width: 100%;
     background: var(--color-background);
     z-index: 100000000000;
-    //box-shadow: 0 0 20px 10px var(--color-background);
+  }
+
+  [class*='v-view-'],
+  .v-app-footer {
+    transform-origin: top left;
+    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+  }
+
+  &.menu-is-open {
+    [class*='v-view-'],
+    .v-app-footer {
+      transform: translateX( -1rem );
+      opacity: .75;
+    }
   }
 }
 </style>
