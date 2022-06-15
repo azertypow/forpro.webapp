@@ -66,6 +66,8 @@ export default defineComponent({
     transform: translate(28%, -25%);
     z-index: 100000;
     border-radius: 100%;
+    background-image: url('/images/FORPRO_01_Entreprise_web.jpg');
+    background-size: cover;
   }
 
   .v-section-header__icon-bottom {
