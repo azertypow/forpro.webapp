@@ -74,7 +74,7 @@ export default defineComponent({
 
     @media all and (max-width: $breakpoint--small) {
       left:  var(--unit-gutter-half);
-      transform: none;
+      transform: translate(50%);
     }
   }
 

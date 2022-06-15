@@ -8,7 +8,6 @@
   >
 
     <div class="v-timeline-item__graphic">
-      <div class="v-timeline-item__graphic__line"></div>
       <div class="v-timeline-item__graphic__circle"></div>
     </div>
 
@@ -121,18 +120,8 @@ export default defineComponent({
       position: absolute;
       top: 0;
       right: 0;
-      transform: translateX(50%);
+      transform: translate(50%, 50%);
       background-color: var(--color-white);
-    }
-
-    .v-timeline-item__graphic__line {
-      position: absolute;
-      height: 4px;
-      background-color: var(--color-secondary);
-      width: calc( (100% / 12) + var(--unit-gutter-half) );
-      top: .5rem;
-      right: 0;
-      transform: translateY(50%);
     }
   }
 
@@ -170,9 +159,6 @@ export default defineComponent({
       left: 0;
       transform: translateX(-50%);
     }
-    .v-timeline-item__graphic__line {
-      left: 0;
-    }
   }
 
   &.is-active {
@@ -190,12 +176,11 @@ export default defineComponent({
 
   @media all and (max-width: $breakpoint--small) {
 
-    .v-timeline-item__graphic__line,
     .v-timeline-item__graphic__circle {
       top: 0 !important;
       left: 0 !important;
       right: auto !important;
-      transform: translate(0%, -50%) !important;
+      transform: translate(0%, 50%) !important;
     }
   }
 }
