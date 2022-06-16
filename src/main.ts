@@ -20,9 +20,9 @@ useForProDataStore().dataFPApi = {
     {
       type: 'timeline',
       title: 'Timeline ForPro',
-      description: '<p>Lorem ipsum <b>dolor sit amet</b>, consectetur adipisicing elit. A alias aspernatur blanditiis debitis doloremque ea ipsa ipsum libero modi molestias, praesentium quaerat quidem repudiandae sequi, soluta veritatis voluptatem voluptatum. Et!</p>',
+      text: '<p>Lorem ipsum <b>dolor sit amet</b>, consectetur adipisicing elit. A alias aspernatur blanditiis debitis doloremque ea ipsa ipsum libero modi molestias, praesentium quaerat quidem repudiandae sequi, soluta veritatis voluptatem voluptatum. Et!</p>',
       status: 'listed',
-      items: [
+      timeline: [
         {
           date: '02.01.2022',
           title: 'Le LearningLab prend forme !',

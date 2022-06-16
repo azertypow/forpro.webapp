@@ -100,7 +100,7 @@ export default defineComponent({
       top: 0;
       left: 0;
       transition: transform 250ms ease-in-out;
-      transform-origin: center left;
+      transform-origin: left center;
 
       &:nth-child(1) {
         transform: translateY(calc( #{$bouton-size} / 5 * 2 ));

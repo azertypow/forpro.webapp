@@ -19,7 +19,7 @@
     >
       <scroll-to-nav anchorTitle="Timeline ForPro">
         <section-timeline
-            :FPApiSectionTimeline="section"
+            :FPApiSectionEvolution="section"
         ></section-timeline>
       </scroll-to-nav>
     </div>
@@ -34,7 +34,7 @@ import SectionHeader from "@/components/SectionHeader.vue"
 import SectionPlan from "@/components/SectionPlan.vue"
 import SectionTimeline from "@/components/SectionTimeline.vue"
 import {useForProDataStore} from "@/stores/forProData"
-import type {IFPApiSectionTimeline} from "@/froproApi/FPApi"
+import type {IFPApiSectionEvolution} from "@/froproApi/FPApi"
 import ScrollToNav from "@/components/ScrollToNav.vue"
 
 export default defineComponent({
@@ -47,8 +47,8 @@ export default defineComponent({
   },
 
   computed: {
-    timelineSections(): IFPApiSectionTimeline[] {
-      return this.forProDataStore.dataFPApi.sections.filter(value => {return value.type === 'timeline'}) as IFPApiSectionTimeline[]
+    timelineSections(): IFPApiSectionEvolution[] {
+      return this.forProDataStore.dataFPApi.sections.filter(value => {return value.type === 'timeline'}) as IFPApiSectionEvolution[]
     }
   }
 

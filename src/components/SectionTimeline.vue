@@ -3,9 +3,9 @@
     <div
         class="v-section-timeline__header fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24"
     >
-      <h1>{{FPApiSectionTimeline.title}}</h1>
+      <h1>{{ FPApiSectionEvolution.title }}</h1>
       <div
-          v-html="FPApiSectionTimeline.description"
+          v-html="FPApiSectionEvolution.text"
       ></div>
     </div>
 
@@ -16,7 +16,7 @@
 
       <div class="fp-grid-container" >
         <div
-          v-for="(item, index) of FPApiSectionTimeline.items"
+          v-for="(item, index) of FPApiSectionEvolution.timeline"
           class="v-section-timeline__items__item-container fp-grid-coll-12-24"
         >
           <timeline-item
@@ -34,15 +34,15 @@
 import {defineComponent} from "vue"
 import type {PropType} from "vue"
 import TimelineItem from "@/components/TimelineItem.vue"
-import type {IFPApiSectionTimeline} from "@/froproApi/FPApi"
+import type {IFPApiSectionEvolution} from "@/froproApi/FPApi"
 
 export default defineComponent({
   components: {TimelineItem},
 
   props: {
-    FPApiSectionTimeline: {
+    FPApiSectionEvolution: {
       required: true,
-      type: Object as PropType<IFPApiSectionTimeline>
+      type: Object as PropType<IFPApiSectionEvolution>
     }
   },
 
