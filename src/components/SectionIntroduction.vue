@@ -24,7 +24,7 @@
 import {defineComponent} from "vue"
 import type {PropType} from "vue"
 import ImageMask from "@/components/ImageMask.vue"
-import type {IFPApiSectionIntro} from "@/froproApi/FPApi"
+import type {IFPApiSectionFoundation, IFPApiSectionIntro} from "@/froproApi/FPApi"
 
 export default defineComponent({
   components: {ImageMask},
@@ -32,7 +32,7 @@ export default defineComponent({
   props: {
     FPApiSectionIntro: {
       required: true,
-      type: Object as PropType<IFPApiSectionIntro>
+      type: Object as PropType<IFPApiSectionIntro | IFPApiSectionFoundation>
     }
   }
 

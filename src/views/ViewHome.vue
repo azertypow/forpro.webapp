@@ -4,7 +4,7 @@
     <section-header></section-header>
 
     <div
-        v-for="section of this.forProDataStore.dataFPApi.sections"
+        v-for="section of forProDataStore.dataFPApi.sections"
     >
       <scroll-to-nav
           v-if="
