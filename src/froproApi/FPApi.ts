@@ -12,6 +12,7 @@ export type FPApiSection =
   | IFPApiSectionIntro
   | IFPApiSectionEvolution
   | IFPApiSectionPlan
+
 export interface IFPApiImage {
   "url":      string
   "mediaUrl": string
@@ -36,7 +37,6 @@ export interface IFPApiSectionBase {
   | "foundation"
   | "introduction"
   | "plan"
-  | "timeline"
 }
 
 export interface IFPApiSectionContact extends IFPApiSectionBase {
@@ -68,4 +68,5 @@ export interface IFPApiSectionTimelineItems {
   title: string
   text: stringFormatHasHTML
   categories: string
+  cover: {[key: string]: IFPApiImage} | null
 }

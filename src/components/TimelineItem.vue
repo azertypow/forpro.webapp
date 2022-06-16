@@ -29,14 +29,19 @@
 
 
 <!--    -->
-    <div class="fp-grid-coll-3-24"></div>
-    <div class="v-timeline-item__image fp-grid-coll-18-24">
-      <image-mask
-          filter-s-v-g-file-name="circle"
-          src="images/jambes.jpeg"
-      ></image-mask>
-    </div>
-    <div class="fp-grid-coll-3-24"></div>
+    <template
+        v-if="FPApiSectionTimelineItems.cover"
+    >
+      <div class="fp-grid-coll-3-24"></div>
+      <div class="v-timeline-item__image fp-grid-coll-18-24">
+        <image-mask
+            v-for="coverImage of FPApiSectionTimelineItems.cover"
+            filter-s-v-g-file-name="circle"
+            :src="coverImage.url"
+        ></image-mask>
+      </div>
+      <div class="fp-grid-coll-3-24"></div>
+    </template>
 <!--    -->
 
 

@@ -3,22 +3,27 @@
 
     <section-header></section-header>
 
-    <scroll-to-nav anchorTitle="Faire ensemble">
-      <section-introduction></section-introduction>
-    </scroll-to-nav>
-
-
-    <scroll-to-nav anchorTitle="Les activités">
-      <section-plan
-          id="plan"
-      ></section-plan>
-    </scroll-to-nav>
-
     <div
-        v-for="section of timelineSections"
+        v-for="section of this.forProDataStore.dataFPApi.sections"
     >
-      <scroll-to-nav anchorTitle="Timeline ForPro">
+      <scroll-to-nav
+          v-if="
+          section.type === 'plan'
+          || section.type === 'introduction'
+          || section.type === 'foundation'
+          || section.type === 'evolution'"
+          :anchorTitle="section.title"
+      >
+        <section-introduction
+            v-if="section.type === 'introduction' || section.type === 'foundation'"
+            :FPApiSectionIntro="section"
+        ></section-introduction>
+        <section-plan
+            v-if="section.type === 'plan'"
+            :FPApiSectionPlan="section"
+        ></section-plan>
         <section-timeline
+            v-if="section.type === 'evolution'"
             :FPApiSectionEvolution="section"
         ></section-timeline>
       </scroll-to-nav>
@@ -48,7 +53,7 @@ export default defineComponent({
 
   computed: {
     timelineSections(): IFPApiSectionEvolution[] {
-      return this.forProDataStore.dataFPApi.sections.filter(value => {return value.type === 'timeline'}) as IFPApiSectionEvolution[]
+      return Object.values(this.forProDataStore.dataFPApi.sections).filter(value => {return value.type === 'evolution'}) as IFPApiSectionEvolution[]
     }
   }
 

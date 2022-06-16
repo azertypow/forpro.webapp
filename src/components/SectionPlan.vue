@@ -3,8 +3,10 @@
     <div
         class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24"
     >
-      <h1>Les activités</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem dignissimos doloribus, eius est ex iure quis vitae voluptate. Ad adipisci, alias dolore excepturi iure minima mollitia officiis unde voluptas.</p>
+      <h1>{{FPApiSectionPlan.title}}</h1>
+      <div
+          v-html="FPApiSectionPlan.text"
+      ></div>
     </div>
 
     <div class="fp-grid-coll-12-24" ></div>
@@ -17,15 +19,6 @@
           class="v-section-plan__plan-container"
           ref="planContainer"
       >
-<!--        <img class="v-section-plan__plan"-->
-<!--             src="../assets/ForPro_Plan.svg"-->
-<!--             alt="plan"-->
-<!--             :style="{-->
-<!--                transform:  transitionStyleValue.transformValue,-->
-<!--                opacity:    transitionStyleValue.opacityValue,-->
-<!--             }"-->
-<!--        >-->
-
         <img class="v-section-plan__plan"
              src="../assets/ForPro_Plan--old.svg"
              alt="plan"
@@ -42,8 +35,18 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
+import type {PropType} from "vue"
+import type {IFPApiSectionPlan} from "@/froproApi/FPApi"
 
 export default defineComponent({
+
+  props: {
+    FPApiSectionPlan: {
+      required: true,
+      type: Object as PropType<IFPApiSectionPlan>
+    }
+  },
+
   data() {
     return {
       top:    NaN,
