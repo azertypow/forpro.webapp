@@ -20,7 +20,7 @@ app.mount('#app')
 })()
 
 async function getDataFPApi(): Promise<IFPApi> {
-  const requestResponse = await window.fetch('http://localhost:8000/')
+  const requestResponse = await window.fetch('https://api.for-pro.ch/')
 
   return await requestResponse.json()
 }
