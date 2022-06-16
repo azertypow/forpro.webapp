@@ -10,7 +10,7 @@ export interface IFPApiSection {
   type:
     "contact"
   | "evolution"
-  | "fondation"
+  | "foundation"
   | "introduction"
   | "plan"
   | "timeline"
