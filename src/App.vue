@@ -11,7 +11,9 @@
       <app-header></app-header>
     </div>
 
-    <RouterView/>
+    <div class="v-app__router-view">
+      <RouterView/>
+    </div>
 
     <app-footer></app-footer>
 
@@ -51,6 +53,10 @@ export default defineComponent({
     z-index: 1000;
   }
 
+  .v-app__router-view {
+    background: var(--color-background);
+  }
+
   [class*='v-view-'],
   .v-app-footer {
     transform-origin: top left;
@@ -58,6 +64,7 @@ export default defineComponent({
   }
 
   &.menu-is-open {
+
     [class*='v-view-'],
     .v-app-footer {
       transform: translateX( -1rem );
