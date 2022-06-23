@@ -13,14 +13,14 @@
 
     <div class="fp-grid-coll-1-24" ></div>
     <div
-        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-22-24"
+        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-24-24"
     >
       <div
           class="v-section-plan__plan-container"
           ref="planContainer"
       >
         <img class="v-section-plan__plan"
-             src="../assets/ForPro_Plan--old.svg"
+             src="../assets/ForPro_Plan.svg"
              alt="plan"
              :style="{
                 transform: transitionStyleValue.transformValue,
