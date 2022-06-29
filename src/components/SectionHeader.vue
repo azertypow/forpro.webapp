@@ -17,7 +17,7 @@ export default defineComponent({
 .v-section-header {
   background-color: var(--color-ternary);
   background-size: cover;
-  background-image: url("public/images/background.svg");
+  background-image: url("/public/images/background.svg");
   position: relative;
   height: 80vh;
   background-position: center;
