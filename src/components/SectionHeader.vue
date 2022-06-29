@@ -2,7 +2,7 @@
   <section
       class="v-section-header fp-with-gutter"
   >
-    <img src="public/images/logo.svg" class="v-section-header__logo" alt="header logo">
+    <img src="/public/images/logo.svg" class="v-section-header__logo" alt="header logo">
 
 <!--    <div class="v-section-header__text fp-remove-child-spacing">-->
 <!--      <h1 class="v-section-header__title fp-text-xxl">ForPro</h1>-->
