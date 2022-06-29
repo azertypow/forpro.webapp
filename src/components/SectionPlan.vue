@@ -13,21 +13,31 @@
 
     <div class="fp-grid-coll-1-24" ></div>
     <div
-        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-24-24"
+        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-22-24"
     >
       <div
           class="v-section-plan__plan-container"
           ref="planContainer"
       >
-        <img class="v-section-plan__plan"
-             src="../assets/ForPro_Plan.svg"
-             alt="plan"
+        <div
+            class="v-section-plan__section-name"
+        >
+          <div>section 1</div>
+          <div>section 2</div>
+          <div>section 3</div>
+          <div>section 4</div>
+        </div>
+        <div class="v-section-plan__plan"
              :style="{
                 transform: transitionStyleValue.transformValue,
                 opacity:    transitionStyleValue.opacityValue,
              }"
         >
-
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -108,17 +118,51 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-section-plan {
   background-color: var(--color-background);
+
+  .v-section-plan__section-name {
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      color: red;
+      &:nth-child(2) {color: blue}
+      &:nth-child(3) {color: cadetblue}
+      &:nth-child(4) {color: aqua}
+    }
+  }
 
   .v-section-plan__plan {
     display: block;
     width: 100%;
     position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    > div {
+      width: 50%;
+      background: red;
+      height: 20vh;
+
+      &:nth-child(2) {background: blue}
+      &:nth-child(3) {background: cadetblue}
+      &:nth-child(4) {background: aqua}
+    }
+  }
+
+  .v-section-plan__plan-container {
+    padding-top: 1rem;
+  }
+
+  @media all and (max-width: $breakpoint--mobile) {
+    > * {
+      margin: 0;
+      width: 100%;
+    }
   }
 }
 
-.v-section-plan__plan-container {
-  padding-top: 1rem;
-}
 </style>

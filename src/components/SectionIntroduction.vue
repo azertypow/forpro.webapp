@@ -39,6 +39,8 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-section-introduction {
   background-color: var(--color-background);
 
@@ -49,6 +51,13 @@ export default defineComponent({
     max-width: 500px;
     margin: auto;
     box-sizing: border-box;
+  }
+
+  @media all and (max-width: $breakpoint--mobile) {
+    > * {
+      margin: 0;
+      width: 100%;
+    }
   }
 
 }
