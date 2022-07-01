@@ -1,43 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 600">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-      }
-
-      .cls-2 {
-        clip-path: url(#clippath);
-      }
-
-      .cls-3 {
-        fill: #fff;
-      }
-
-      .cls-4 {
-        fill: #ffbe96;
-      }
-
-      .cls-5 {
-        fill: #ff6917;
-      }
-
-      .cls-6 {
-        clip-path: url(#clippath-1);
-      }
-    </style>
-    <clipPath id="clippath">
-      <rect class="cls-1" width="1280" height="600"/>
-    </clipPath>
-    <clipPath id="clippath-1">
-      <rect class="cls-1" y=".0005" width="1684.01342" height="1125.40656"/>
-    </clipPath>
-  </defs>
-  <g class="cls-2">
-    <rect class="cls-4" width="1280" height="600"/>
-    <g class="cls-6">
-      <path class="cls-3" d="M1338.52837,1114.16772l152.45293-151.15833,74.36317-73.7312,107.32984-106.4188c15.11931-14.99088,15.11868-39.51937-.0005-54.51025l-330.29878-327.49383c-15.1183-14.99035-39.85741-14.99085-54.97659,0l-52.66047,52.21326c-14.95482,14.82782-39.42585,14.82882-54.38217,0l-155.23-153.91232c-15.11308-14.98474-39.84394-14.98524-54.95752,0l-226.81566,224.89006c-15.11358,14.98474-15.11308,39.50558,0,54.49081l540.21867,535.6311c15.11314,14.98422,39.84394,14.98422,54.95708-.00051"/>
-    </g>
-    <polygon class="cls-5" points="62.81532 .00037 62.81635 76.57144 147.42265 159.39197 62.81377 242.21412 62.81635 293.7843 375.73276 599.99988 428.41227 599.99782 513.02063 517.17523 597.62693 599.99782 675.84972 599.99782 675.84972 119.76934 553.40427 .00037 62.81532 .00037"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1280 600" style="enable-background:new 0 0 1280 600;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000011015889609315925820000007723353708312529792_);fill:#FFBE96;}
+	.st1{clip-path:url(#SVGID_00000011015889609315925820000007723353708312529792_);fill:#FFFFFF;}
+	.st2{clip-path:url(#SVGID_00000011015889609315925820000007723353708312529792_);fill:#FF6917;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="1280" height="600"/>
+	</defs>
+	<clipPath id="SVGID_00000142890693346771650580000016669587577571789500_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	
+		<rect x="0" style="clip-path:url(#SVGID_00000142890693346771650580000016669587577571789500_);fill:#FFBE96;" width="1280" height="600"/>
+	<path style="clip-path:url(#SVGID_00000142890693346771650580000016669587577571789500_);fill:#FFFFFF;" d="M1303.1,1114.2
+		L1455.5,963l74.4-73.7l107.3-106.4c15.1-15,15.1-39.5,0-54.5l-330.3-327.5c-15.1-15-39.9-15-55,0l-52.7,52.2
+		c-15,14.8-39.4,14.8-54.4,0L989.7,299.2c-15.1-15-39.8-15-55,0L707.9,524c-15.1,15-15.1,39.5,0,54.5l540.2,535.6
+		C1263.3,1129.2,1288,1129.2,1303.1,1114.2"/>
+	<polygon style="clip-path:url(#SVGID_00000142890693346771650580000016669587577571789500_);fill:#FF6917;" points="27.4,0 
+		27.4,76.6 112,159.4 27.4,242.2 27.4,293.8 340.3,600 393,600 477.6,517.2 562.2,600 640.4,600 640.4,119.8 518,0 	"/>
+</g>
 </svg>
