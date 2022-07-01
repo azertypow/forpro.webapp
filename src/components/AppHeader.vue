@@ -1,5 +1,5 @@
 <template>
-  <header class="v-app-header fp-with-gutter fp-max-width">
+  <header class="v-app-header fp-with-gutter">
 
     <div
         class="v-app-header__left"
