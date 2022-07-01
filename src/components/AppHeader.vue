@@ -29,6 +29,11 @@
             :to="`/#${sectionAnchor}`"
             @click="forProDataStore.menuIsOpen = false"
         >{{sectionAnchor}}</RouterLink>
+<!--        <RouterLink-->
+<!--            @click="forProDataStore.menuIsOpen = false"-->
+<!--            to="/forpro-mail-signature-generator"-->
+<!--            class="fp-with-gutter fp-with-row"-->
+<!--        >Signature de mail</RouterLink>-->
       </nav>
     </transition>
 
