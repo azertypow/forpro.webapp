@@ -30,7 +30,7 @@
       >
         <RouterLink
             v-for="sectionAnchor of forProDataStore.ArrayOfSectionAnchor"
-            class="fp-with-gutter fp-with-row"
+            class="fp-with-gutter fp-with-row fp-text-h2"
             :to="`/#${sectionAnchor}`"
             @click="forProDataStore.menuIsOpen = false"
         >{{sectionAnchor}}</RouterLink>
@@ -79,8 +79,15 @@ export default defineComponent({
     top: var(--header-height);
     right: 0;
     width: auto;
+    min-width: 50%;
     height: calc(100% - var(--header-height) );
     background-color: var(--color-background);
+
+    > * {
+      margin-top: .5rem;
+      margin-bottom: 0;
+      text-decoration: none;
+    }
   }
 
   .v-app-header__toggle-theme {
