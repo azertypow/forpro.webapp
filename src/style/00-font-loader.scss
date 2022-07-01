@@ -1,39 +1,33 @@
 @font-face {
   font-family: "Junka";
-  src: url("/fonts/Jungka/Jungka_Regular.otf") format("opentype");
+  src:  url("/fonts/Jungka/Jungka_Regular.otf");
+  src:  url("/fonts/Jungka/Jungka-Regular.woff"),
+        url("/fonts/Jungka/Jungka-Regular.woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Junka";
-  src: url("/fonts/Jungka/Jungka Italic.otf") format("opentype");
+  src:  url("/fonts/Jungka/Jungka Italic.otf");
+  src:  url("/fonts/Jungka/Jungka-RegularItalic.woff"),
+        url("/fonts/Jungka/Jungka-RegularItalic.woff2");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Junka";
-  src: url("/fonts/Jungka/Jungka Book.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Junka";
-  src: url("/fonts/Jungka/Jungka Book Italic.otf") format("opentype");
-  font-weight: 500;
-  font-style: italic;
-}
-
-
-@font-face {
-  font-family: "Junka";
-  src: url("/fonts/Jungka/Jungka Medium.otf") format("opentype");
+  src:  url("/fonts/Jungka/Jungka Medium.otf");
+  src:  url("/fonts/Jungka/Jungka-Medium.woff"),
+        url("/fonts/Jungka/Jungka-Medium.woff2");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Junka";
-  src: url("/fonts/Jungka/Jungka Medium Italic.otf") format("opentype");
+  src:  url("/fonts/Jungka/Jungka Medium Italic.otf");
+  //src:  url("/fonts/Jungka/"),
+  //      url("/fonts/Jungka/");
   font-weight: 600;
   font-style: italic;
 }
@@ -41,13 +35,17 @@
 
 @font-face {
   font-family: "Junka";
-  src: url("/fonts/Jungka/Jungka Bold.otf") format("opentype");
+  src:  url("/fonts/Jungka/Jungka Bold.otf");
+  src:  url("/fonts/Jungka/Jungka-Bold.woff"),
+        url("/fonts/Jungka/Jungka-Bold.woff2");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Junka";
-  src: url("/fonts/Jungka/Jungka Bold Italic.otf") format("opentype");
+  src:  url("/fonts/Jungka/Jungka Bold Italic.otf");
+  //src:  url("/fonts/Jungka/"),
+  //      url("/fonts/Jungka/");
   font-weight: 800;
   font-style: italic;
 }
