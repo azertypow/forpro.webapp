@@ -57,18 +57,19 @@ export default defineComponent({
     background: var(--color-background);
   }
 
-  [class*='v-view-'],
+  .v-app__router-view,
   .v-app-footer {
     transform-origin: top left;
+    transform: translateX( 0 );
     transition: transform .5s ease-in-out, opacity .5s ease-in-out;
   }
 
   &.menu-is-open {
 
-    [class*='v-view-'],
+    .v-app__router-view,
     .v-app-footer {
-      transform: translateX( -1rem );
-      opacity: .75;
+      transform: translateX( -2% );
+      opacity: .5;
     }
   }
 }
