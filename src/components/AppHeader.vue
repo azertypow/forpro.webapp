@@ -2,8 +2,13 @@
   <header class="v-app-header fp-with-gutter fp-max-width">
 
     <div
-        class="v-app-header__logo fp-with-gutter"
-    ><img alt="header logo" src="/public/images/logo.svg"></div>
+        class="v-app-header__left"
+    >
+      <div
+          class="v-app-header__logo fp-with-gutter"
+      ><img alt="header logo" src="images/logo.svg"></div>
+      <div>Viens constuire ta voie professionnelle!</div>
+    </div>
 
     <div
         @click="() => {forProDataStore.toggleMenuStatus()}"
@@ -61,6 +66,11 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .v-app-header__left {
+    display: flex;
+    align-items: center;
+  }
 
   .v-app-header__nav {
     position: fixed;

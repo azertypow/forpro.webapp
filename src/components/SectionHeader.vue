@@ -2,7 +2,7 @@
   <section
       class="v-section-header fp-with-gutter"
   >
-    <img src="/public/images/logo.svg" class="v-section-header__logo" alt="header logo">
+    <img src="images/logo.svg" class="v-section-header__logo" alt="header logo">
   </section>
 </template>
 
