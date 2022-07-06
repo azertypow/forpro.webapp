@@ -2,7 +2,11 @@
   <section
       class="v-section-header fp-with-gutter"
   >
-    <img src="/images/logo.svg" class="v-section-header__logo" alt="header logo">
+    <img
+        src="/images/logo.svg"
+        class="v-section-header__logo fp-with-gutter fp-grid-coll-22-24 fp-grid-skip-1-24"
+        alt="header logo"
+    >
   </section>
 </template>
 
@@ -14,6 +18,8 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-section-header {
   background-color: var(--color-ternary);
   background-size: cover;
@@ -26,11 +32,15 @@ export default defineComponent({
 
   .v-section-header__logo {
     display: block;
-    width: calc( 100% - var(--unit-gutter) );
+    //width: calc( 100% - var(--unit-gutter) );
     height: auto;
     user-select: none;
     pointer-events: none;
-    margin: auto;
+
+    @media (max-width: $breakpoint--mobile) {
+      width: 100%;
+      margin: 0;
+    }
   }
 
   //.v-section-header__text {
