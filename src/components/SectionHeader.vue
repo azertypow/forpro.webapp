@@ -43,6 +43,10 @@ export default defineComponent({
   display: flex;
   align-items: center;
 
+  .blue & {
+    background-position: 70% center;
+  }
+
   @media (max-width: $breakpoint--mobile) {
     height: 50vh;
   }
