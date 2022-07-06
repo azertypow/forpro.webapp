@@ -8,7 +8,7 @@
           class="v-app-header__logo fp-with-gutter"
           to="/"
       ><img alt="header logo" src="/images/logo.svg"></router-link>
-      <div>Viens constuire ta voie professionnelle!</div>
+      <div class="v-app-header__baseline fp-with-gutter" >Viens constuire ta voie professionnelle!</div>
     </div>
 
     <div
@@ -113,6 +113,10 @@ export default defineComponent({
       user-select: none !important;
       pointer-events: none !important;
     }
+  }
+
+  .v-app-header__baseline {
+    margin-left: var(--unit-gutter);
   }
 
   .v-app-header__toggle-menu {
