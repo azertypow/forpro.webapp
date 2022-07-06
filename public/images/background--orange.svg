@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1280 600" style="enable-background:new 0 0 1280 600;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000063626752607001468260000009117612053992551323_);fill:#FFBE96;}
+	.st1{clip-path:url(#SVGID_00000155135729323750790700000004512101465385372066_);fill:#FFFFFF;}
+	.st2{clip-path:url(#SVGID_00000140728452967367989840000002863570858982248627_);fill:#FF6917;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="1280" height="600"/>
+	</defs>
+	<clipPath id="SVGID_00000152259544784632654840000013140688007920480935_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	
+		<rect style="clip-path:url(#SVGID_00000152259544784632654840000013140688007920480935_);fill:#FFBE96;" width="1280" height="600"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_00000134945030646077069790000003240080237939735459_" width="1280" height="600"/>
+	</defs>
+	<clipPath id="SVGID_00000099629503213613731910000015245094796388431781_">
+		<use xlink:href="#SVGID_00000134945030646077069790000003240080237939735459_"  style="overflow:visible;"/>
+	</clipPath>
+	<path style="clip-path:url(#SVGID_00000099629503213613731910000015245094796388431781_);fill:#FFFFFF;" d="M1310.5,1123
+		l154.8-153.6l75.6-74.9l109-108.1c15.3-15.2,15.3-40.1,0-55.4l-335.6-332.7c-15.3-15.2-40.5-15.2-55.9,0l-53.5,53
+		c-15.2,15-40,15-55.3,0L992.1,295c-15.3-15.2-40.4-15.2-55.9,0L705.8,523.4c-15.3,15.2-15.3,40.1,0,55.4l548.8,544.1
+		C1270.1,1138.2,1295.2,1138.2,1310.5,1123"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_00000173879560833326032330000004259943310046186902_" width="1280" height="600"/>
+	</defs>
+	<clipPath id="SVGID_00000124123449237229363600000003588402238307967654_">
+		<use xlink:href="#SVGID_00000173879560833326032330000004259943310046186902_"  style="overflow:visible;"/>
+	</clipPath>
+	<polygon style="clip-path:url(#SVGID_00000124123449237229363600000003588402238307967654_);fill:#FF6917;" points="23,-9 23,68.8 
+		108.9,153 23,237.1 23,289.5 340.9,600.6 394.4,600.6 480.4,516.5 566.3,600.6 645.8,600.6 645.8,112.7 521.4,-9 	"/>
+</g>
+</svg>
