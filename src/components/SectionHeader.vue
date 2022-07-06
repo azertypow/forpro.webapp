@@ -2,7 +2,7 @@
   <section
       class="v-section-header fp-with-gutter"
   >
-    <img src="images/logo.svg" class="v-section-header__logo" alt="header logo">
+    <img src="/images/logo.svg" class="v-section-header__logo" alt="header logo">
   </section>
 </template>
 
@@ -26,10 +26,11 @@ export default defineComponent({
 
   .v-section-header__logo {
     display: block;
-    width: 100%;
+    width: calc( 100% - var(--unit-gutter) );
     height: auto;
     user-select: none;
     pointer-events: none;
+    margin: auto;
   }
 
   //.v-section-header__text {

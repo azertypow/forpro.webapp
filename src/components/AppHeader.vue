@@ -6,7 +6,7 @@
     >
       <div
           class="v-app-header__logo fp-with-gutter"
-      ><img alt="header logo" src="images/logo.svg"></div>
+      ><img alt="header logo" src="/images/logo.svg"></div>
       <div>Viens constuire ta voie professionnelle!</div>
     </div>
 
