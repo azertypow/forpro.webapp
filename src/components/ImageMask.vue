@@ -3,7 +3,14 @@
       class="v-image-mask"
   >
     <img :src="`masks/${filterSVGFileName}--border--${forProDataStore.fpThemeName}.svg`" alt="" class="v-image-mask__mask"/>
-    <img :src="src"                                alt="" class="v-image-mask__img" :style="style"/>
+    <img :src="src"
+         alt=""
+         class="v-image-mask__img"
+         :style="{
+        webkitMask: webkitMask,
+        maskImage:  maskImage,
+         }"
+    />
   </div>
 </template>
 
@@ -20,12 +27,18 @@ export default defineComponent({
   data() {
     return {
       forProDataStore: useForProDataStore(),
-      style: {
-        webkitMask: `url(masks/${this.filterSVGFileName}--border--${useForProDataStore().fpThemeName}.svg)`,
-        maskImage:  `url(masks/${this.filterSVGFileName}.svg)`,
-      }
     }
   },
+
+  computed: {
+    webkitMask(): string {
+      return `url(masks/${this.filterSVGFileName}--border--${this.forProDataStore.fpThemeName}.svg)`
+    },
+
+    maskImage(): string {
+      return `url(masks/${this.filterSVGFileName}.svg)`
+    }
+  }
 
 })</script>
 

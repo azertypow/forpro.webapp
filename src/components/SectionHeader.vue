@@ -1,7 +1,9 @@
 <template>
   <section
       class="v-section-header fp-with-gutter"
-      :style="style"
+      :style="{
+        backgroundImage: backgroundImage
+      }"
   >
     <img
         :src="`images/logo--${forProDataStore.fpThemeName}.svg`"
@@ -19,11 +21,14 @@ export default defineComponent({
   data() {
     return {
       forProDataStore: useForProDataStore(),
-      style: {
-        backgroundImage: `url("images/background--${useForProDataStore().fpThemeName}.svg")`,
-      }
     }
   },
+
+  computed: {
+    backgroundImage(): string {
+      return `url("images/background--${this.forProDataStore.fpThemeName}.svg")`
+    },
+  }
 })</script>
 
 <style lang="scss">
