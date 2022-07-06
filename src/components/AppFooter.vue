@@ -1,6 +1,6 @@
 <template>
   <div class="v-app-footer fp-section--default">
-    <div class="fp-grid-container fp-with-gutter fp-max-width">
+    <div class="v-app-footer__container fp-grid-container fp-with-gutter fp-max-width">
       <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-12-24">
         <h4>LearningLab</h4>
         <p>
@@ -29,7 +29,7 @@
           <br>Tram
         </p>
 
-        <h3>Newsletter</h3>
+        <h4>Newsletter</h4>
         <p>
           Découvrez nos dernières actualités !
         </p>
@@ -50,9 +50,23 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-app-footer {
   min-height: 50vh;
   background-color: var(--color-ternary);
   color: var(--color-main--dark);
+
+  .v-app-footer__container {
+    @media (max-width: $breakpoint--small) {
+      > * {
+        width: 100%;
+      }
+
+      > * + * {
+        margin-top: 2rem;
+      }
+    }
+  }
 }
 </style>
