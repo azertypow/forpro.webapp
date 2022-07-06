@@ -4,9 +4,10 @@
     <div
         class="v-app-header__left"
     >
-      <div
+      <router-link
           class="v-app-header__logo fp-with-gutter"
-      ><img alt="header logo" src="/images/logo.svg"></div>
+          to="/"
+      ><img alt="header logo" src="/images/logo.svg"></router-link>
       <div>Viens constuire ta voie professionnelle!</div>
     </div>
 
@@ -99,6 +100,10 @@ export default defineComponent({
   }
 
   .v-app-header__logo {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+
     img {
       display: block;
       height: 1rem;
