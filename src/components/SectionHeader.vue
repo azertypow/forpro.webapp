@@ -32,7 +32,6 @@ export default defineComponent({
 
   .v-section-header__logo {
     display: block;
-    //width: calc( 100% - var(--unit-gutter) );
     height: auto;
     user-select: none;
     pointer-events: none;
