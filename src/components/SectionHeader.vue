@@ -4,7 +4,7 @@
       :style="style"
   >
     <img
-        src="/images/logo.svg"
+        :src="`/public/images/logo--${forProDataStore.fpThemeName}.svg`"
         class="v-section-header__logo fp-with-gutter fp-grid-coll-22-24 fp-grid-skip-1-24"
         alt="header logo"
     >
@@ -18,6 +18,7 @@ import {useForProDataStore} from "@/stores/forProData"
 export default defineComponent({
   data() {
     return {
+      forProDataStore: useForProDataStore(),
       style: {
         backgroundImage: `url("/public/images/background--${useForProDataStore().fpThemeName}.svg")`,
       }
