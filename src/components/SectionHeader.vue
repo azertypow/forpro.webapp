@@ -30,6 +30,10 @@ export default defineComponent({
   display: flex;
   align-items: center;
 
+  @media (max-width: $breakpoint--mobile) {
+    height: 50vh;
+  }
+
   .v-section-header__logo {
     display: block;
     height: auto;
