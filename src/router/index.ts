@@ -26,7 +26,7 @@ const router = createRouter({
       component: () => import('../views/ViewHome.vue')
     },
     {
-      path: '/forpro.webapp/mail-signature-generator',
+      path: '/mail-signature-generator',
       name: 'mail-signature-generator',
       component: () => import('../views/mailSignatureGenerator.vue')
     },
