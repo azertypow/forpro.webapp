@@ -54,7 +54,7 @@ export default defineComponent({
 
 .v-app-footer {
   min-height: 50vh;
-  background-color: var(--color-ternary);
+  background-color: var(--themejs--background-color);
   color: var(--color-main--dark);
 
   .v-app-footer__container {

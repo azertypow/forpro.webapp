@@ -2,9 +2,9 @@
   <div
       data-theme="dark"
       class="v-app"
-      :class="{
-        'menu-is-open': forProDataStore.menuIsOpen
-      }"
+      :class="[{
+        'menu-is-open': forProDataStore.menuIsOpen,
+      }, forProDataStore.fpThemeName]"
   >
 
     <div class="v-app__header">

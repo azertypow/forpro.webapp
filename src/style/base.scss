@@ -11,6 +11,9 @@
   --color-ternary:          hsl(32, 100%, 78%);
   --color-ternary--dark:    hsl(32, 100%, 25%);
 
+  --themejs--color-border:      #0000ff;  //set by localStorage theme value
+  --themejs--background-color:  #aac8ff;  //set by localStorage theme value
+
   --unit-horizontal:  25px;
   --unit-horizontal-half: calc( var(--unit-horizontal) / 2 );
   --unit-gutter:      25px;

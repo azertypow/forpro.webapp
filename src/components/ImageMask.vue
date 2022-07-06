@@ -2,13 +2,14 @@
   <div
       class="v-image-mask"
   >
-    <img :src="`masks/${filterSVGFileName}--border.svg`" alt="" class="v-image-mask__mask"/>
+    <img :src="`masks/${filterSVGFileName}--border--${forProDataStore.fpThemeName}.svg`" alt="" class="v-image-mask__mask"/>
     <img :src="src"                                alt="" class="v-image-mask__img" :style="style"/>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue"
+import {useForProDataStore} from "@/stores/forProData"
 
 export default defineComponent({
   props: {
@@ -18,8 +19,9 @@ export default defineComponent({
 
   data() {
     return {
+      forProDataStore: useForProDataStore(),
       style: {
-        webkitMask: `url(masks/${this.filterSVGFileName}.svg)`,
+        webkitMask: `url(masks/${this.filterSVGFileName}--border--${useForProDataStore().fpThemeName}.svg)`,
         maskImage:  `url(masks/${this.filterSVGFileName}.svg)`,
       }
     }

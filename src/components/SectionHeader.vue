@@ -1,6 +1,7 @@
 <template>
   <section
       class="v-section-header fp-with-gutter"
+      :style="style"
   >
     <img
         src="/images/logo.svg"
@@ -12,18 +13,24 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
+import {useForProDataStore} from "@/stores/forProData"
 
 export default defineComponent({
-
+  data() {
+    return {
+      style: {
+        backgroundImage: `url("/public/images/background--${useForProDataStore().fpThemeName}.svg")`,
+      }
+    }
+  },
 })</script>
 
 <style lang="scss">
 @import "../style/00-sass_parameters";
 
 .v-section-header {
-  background-color: var(--color-ternary);
+  background-color: var(--themejs--background-color);
   background-size: cover;
-  background-image: url("/public/images/background.svg");
   position: relative;
   height: 80vh;
   background-position: center;
