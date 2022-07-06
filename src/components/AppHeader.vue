@@ -116,7 +116,7 @@ export default defineComponent({
   }
 
   .v-app-header__baseline {
-    margin-left: var(--unit-gutter);
+    margin-left: calc( var(--unit-gutter) * 2);
   }
 
   .v-app-header__toggle-menu {
