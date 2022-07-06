@@ -62,6 +62,8 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-app-header {
   height: var(--header-height);
   display: flex;
@@ -71,6 +73,12 @@ export default defineComponent({
   .v-app-header__left {
     display: flex;
     align-items: center;
+
+    @media all and (max-width: $breakpoint--small) {
+      > div {
+        display: none;
+      }
+    }
   }
 
   .v-app-header__nav {
