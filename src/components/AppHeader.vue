@@ -36,7 +36,7 @@
         >{{sectionAnchor}}</RouterLink>
         <RouterLink
             @click="forProDataStore.menuIsOpen = false"
-            to="/forpro-mail-signature-generator"
+            to="/mail-signature-generator"
             class="fp-with-gutter fp-with-row"
         >Signature de mail</RouterLink>
       </nav>
