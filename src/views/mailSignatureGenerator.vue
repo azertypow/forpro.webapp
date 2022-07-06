@@ -168,6 +168,25 @@ export default defineComponent({
       selection.removeAllRanges()
       selection.addRange(range)
 
+      // todo: other methode to implement
+      // function setClipboard(text) {
+      //   const type = "text/html";
+      //   const blob = new Blob(['<h1>'+text+'</h1>'], { type });
+      //   const data = [new ClipboardItem({ [type]: blob })];
+      //
+      //   navigator.clipboard.write(data).then(
+      //       function () {
+      //         /* success */
+      //         console.log('succcess')
+      //       },
+      //       function (e) {
+      //         /* failure */
+      //         console.log('failed')
+      //         console.log(e)
+      //       }
+      //   );
+      // }
+
     },
 
     getCleanedEmptyString(value: string, placeholder: string):string {
