@@ -91,6 +91,10 @@ export default defineComponent({
       margin-top: .5rem;
       margin-bottom: 0;
       text-decoration: none;
+
+      &:hover {
+        color: var(--color-main);
+      }
     }
   }
 
