@@ -26,6 +26,8 @@
           <div
               class="fp-with-gutter"
               v-for="section of arrayOfSectionOver"
+              :data-id="section.id"
+              @mouseover="activeSection(section)"
           >{{section.name}}</div>
         </div>
         <div class="v-section-plan__plan"
@@ -65,7 +67,8 @@ export default defineComponent({
       height: NaN,
       translateFrom_inPercent: -100,
       translateTo_inPercent: 0,
-      arrayOfSectionOver: [] as {name: string, element: Element, color: string}[]
+      arrayOfSectionOver: [] as {name: string, element: Element, color: string, id: string}[],
+      activatedSection: null as {name: string, element: Element, color: string, id: string} | null,
     }
   },
 
@@ -82,6 +85,7 @@ export default defineComponent({
           name: this.getColorAndCleanedSectionName(value.id as string).cleanedSectionName,
           color: this.getColorAndCleanedSectionName(value.id as string).color,
           element: value,
+          id: value.id
         })
       })
 
@@ -101,11 +105,28 @@ export default defineComponent({
       this.height = this.$refs.planContainer.getBoundingClientRect().height
     },
 
+    activeSection(section: {name: string, element: Element, color: string, id: string}) {
+      if(! (event instanceof Event) ) return
+      if(! (event.target instanceof HTMLElement) ) return
+
+      this.activatedSection = section
+
+      if(! (this.$refs.svgContainer instanceof HTMLElement) ) return
+
+      const svgSectionsElement = this.$refs.svgContainer.querySelectorAll('svg #Sections > *')
+
+      svgSectionsElement.forEach((value, key) => {
+        if (! (value instanceof SVGElement) ) return
+
+        value.style.display = value.id === section.id ? 'block' : 'none'
+      })
+    },
+
     getColorAndCleanedSectionName(sectionId: string): {color: string, cleanedSectionName: string} {
 
       return {
         cleanedSectionName: sectionId.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('--.+', 'i'), ''),
-        color: sectionId.match(new RegExp('--.*', 'ig'))?.[0] || 'black',
+        color: sectionId.match(new RegExp('--.*', 'ig'))?.[0].replace('--', '#') || 'black',
       }
     }
   },
@@ -161,6 +182,8 @@ export default defineComponent({
 
     > div {
       padding-bottom: .5rem;
+      cursor: pointer;
+      user-select: none;
     }
   }
 
