@@ -132,7 +132,7 @@ export default defineComponent({
   },
 
   computed: {
-    distance(): number { return this.height * 1.5},
+    distance(): number { return this.height * 1},
 
     topFromBottomOfScreen(): number { return this.top - window.innerHeight},
 
