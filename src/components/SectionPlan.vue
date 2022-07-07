@@ -94,7 +94,7 @@ export default defineComponent({
   },
 
   beforeMount() {
-    window.addEventListener('scroll', this.setPlanPosition)
+    // window.addEventListener('scroll', this.setPlanPosition)
   },
 
   methods: {
