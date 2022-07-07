@@ -112,13 +112,19 @@ export default defineComponent({
       this.activatedSection = section
 
       if(! (this.$refs.svgContainer instanceof HTMLElement) ) return
+      if(! (this.$refs.sectionsListContainer instanceof HTMLElement) ) return
 
-      const svgSectionsElement = this.$refs.svgContainer.querySelectorAll('svg #Sections > *')
+      const svgSectionsElement  = this.$refs.svgContainer.querySelectorAll('svg #Sections > *')
+      const sectionNameElements = this.$refs.sectionsListContainer.querySelectorAll('div')
 
-      svgSectionsElement.forEach((value, key) => {
+      svgSectionsElement.forEach(value => {
         if (! (value instanceof SVGElement) ) return
-
         value.style.display = value.id === section.id ? 'block' : 'none'
+      })
+
+      sectionNameElements.forEach(value => {
+        if (! (value instanceof HTMLElement) ) return
+        value.style.color = value.dataset.id === section.id ? section.color : 'black'
       })
     },
 
@@ -196,6 +202,10 @@ export default defineComponent({
       display: block;
       width: 100%;
     }
+  }
+
+  #Sections > * {
+    display: none;
   }
 
   .v-section-plan__plan-container {
