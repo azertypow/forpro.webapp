@@ -52,7 +52,7 @@ export default defineComponent({
   },
 
   computed: {
-    listedStatusSection(): fpApiSections {
+    listedStatusSection(): fpApiSections[] {
       return Object.values(this.forProDataStore.dataFPApi.sections).filter(value => {
         return value.status === 'listed'
       })
