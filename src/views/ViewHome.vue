@@ -40,7 +40,7 @@ import SectionPlan from "@/components/SectionPlan.vue"
 import SectionTimeline from "@/components/SectionTimeline.vue"
 import {useForProDataStore} from "@/stores/forProData"
 import ScrollToNav from "@/components/ScrollToNav.vue"
-import type {fpApiSections} from "@/froproApi/FPApi"
+import type {FPApiSection} from "@/froproApi/FPApi"
 
 export default defineComponent({
   components: {ScrollToNav, SectionTimeline, SectionPlan, SectionHeader, SectionIntroduction},
@@ -52,7 +52,7 @@ export default defineComponent({
   },
 
   computed: {
-    listedStatusSection(): fpApiSections[] {
+    listedStatusSection(): FPApiSection[] {
       return Object.values(this.forProDataStore.dataFPApi.sections).filter(value => {
         return value.status === 'listed'
       })
