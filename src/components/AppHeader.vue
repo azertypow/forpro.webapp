@@ -8,7 +8,7 @@
           class="v-app-header__logo fp-with-gutter"
           to="/"
       ><img alt="header logo" src="/images/logo.svg"></router-link>
-      <div class="v-app-header__baseline fp-with-gutter" >Viens constuire ta voie professionnelle!</div>
+      <div class="v-app-header__baseline fp-with-gutter" >Faire de la formation professionnelle une voie désirée et désirable</div>
     </div>
 
     <div
