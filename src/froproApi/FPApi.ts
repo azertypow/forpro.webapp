@@ -27,6 +27,12 @@ export interface IFPApiImage {
 }
 
 // api sections
+export type fpApiSections = IFPApiSectionContact
+                            | IFPApiSectionFoundation
+                            | IFPApiSectionIntro
+                            | IFPApiSectionEvolution
+                            | IFPApiSectionPlan
+
 export interface IFPApiSectionBase {
   status?: FPApiStatus
   title:  string

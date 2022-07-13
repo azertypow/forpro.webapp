@@ -4,7 +4,7 @@
     <section-header></section-header>
 
     <div
-        v-for="section of forProDataStore.dataFPApi.sections"
+        v-for="section of listedStatusSection"
     >
       <scroll-to-nav
           v-if="
@@ -39,8 +39,8 @@ import SectionHeader from "@/components/SectionHeader.vue"
 import SectionPlan from "@/components/SectionPlan.vue"
 import SectionTimeline from "@/components/SectionTimeline.vue"
 import {useForProDataStore} from "@/stores/forProData"
-import type {IFPApiSectionEvolution} from "@/froproApi/FPApi"
 import ScrollToNav from "@/components/ScrollToNav.vue"
+import type {fpApiSections} from "@/froproApi/FPApi"
 
 export default defineComponent({
   components: {ScrollToNav, SectionTimeline, SectionPlan, SectionHeader, SectionIntroduction},
@@ -52,8 +52,10 @@ export default defineComponent({
   },
 
   computed: {
-    timelineSections(): IFPApiSectionEvolution[] {
-      return Object.values(this.forProDataStore.dataFPApi.sections).filter(value => {return value.type === 'evolution'}) as IFPApiSectionEvolution[]
+    listedStatusSection(): fpApiSections {
+      return Object.values(this.forProDataStore.dataFPApi.sections).filter(value => {
+        return value.status === 'listed'
+      })
     }
   }
 
