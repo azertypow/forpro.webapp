@@ -1,5 +1,5 @@
 <template>
-  <section class="v-section-timeline fp-section--default fp-grid-container fp-with-gutter fp-max-width">
+  <section class="v-section-timeline fp-section--default fp-grid-container fp-max-width">
     <div
         class="v-section-timeline__header fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24"
     >

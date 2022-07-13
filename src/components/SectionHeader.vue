@@ -1,6 +1,6 @@
 <template>
   <section
-      class="v-section-header fp-with-gutter"
+      class="v-section-header"
       :style="{
         backgroundImage: backgroundImage
       }"

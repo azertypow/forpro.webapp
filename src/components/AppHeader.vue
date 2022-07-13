@@ -1,5 +1,5 @@
 <template>
-  <header class="v-app-header fp-with-gutter">
+  <header class="v-app-header">
 
     <div
         class="v-app-header__left"
@@ -131,6 +131,7 @@ export default defineComponent({
     width: $bouton-size;
     height: $bouton-size;
     padding: calc( var(--unit-gutter-half) / 2 );
+    margin-right: calc( var(--unit-gutter-half) / 2 );
     &:hover {
       background: rgba(0, 0, 0, 0.05);
     }

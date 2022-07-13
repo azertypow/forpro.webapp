@@ -1,5 +1,5 @@
 <template>
-  <section class="v-section-team fp-section--default fp-with-gutter fp-grid-container fp-max-width">
+  <section class="v-section-team fp-section--default fp-grid-container fp-max-width">
 
     <div class="v-section-team__section-title fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
       <h1>{{FPApiSectionTeam.title}}</h1>
@@ -62,26 +62,33 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-section-team {
-}
+  .v-section-team__section-title {}
 
-.v-section-team__section-title {}
+  .v-section-team__section-team {
 
-.v-section-team__section-team {
+    .v-people-item {
+      margin-top: 2rem;
+    }
+  }
 
-  .v-people-item {
+  .v-section-team__section-text {
     margin-top: 2rem;
   }
-}
 
-.v-section-team__section-text {
-  margin-top: 2rem;
-}
+  .v-section-team__section-partners {
+    .v-people-item {
+      margin-top: 2rem;
+    }
+  }
 
-.v-section-team__section-partners {
-  .v-people-item {
-    margin-top: 2rem;
+  @media all and (max-width: $breakpoint--mobile) {
+    > * {
+      margin: 0;
+      width: 100%;
+    }
   }
 }
-
 </style>
