@@ -190,6 +190,7 @@ export default defineComponent({
       padding-bottom: .5rem;
       cursor: pointer;
       user-select: none;
+      font-weight: 800;
     }
   }
 
