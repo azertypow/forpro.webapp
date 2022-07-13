@@ -3,17 +3,6 @@
   flex-wrap: wrap;
 }
 
-.fp-grid-coll-main {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-
-  @media (min-width: $breakpoint--mobile) {
-    width: 50%;
-  }
-}
-
-
 [class*='fp-grid-coll'] {
   display: block;
   box-sizing: border-box;
@@ -75,63 +64,3 @@
 .fp-grid-skip-22-24 { margin-left: calc(100% / 24 * 22);}
 .fp-grid-skip-23-24 { margin-left: calc(100% / 24 * 23);}
 .fp-grid-skip-24-24 { margin-left: calc(100% / 24 * 24);}
-
-@media (min-width: $breakpoint--mobile) {
-  .fp-grid-coll-1-24  { width: calc(100% / 24 * 1);}
-  .fp-grid-coll-2-24  { width: calc(100% / 24 * 2);}
-  .fp-grid-coll-3-24  { width: calc(100% / 24 * 3);}
-  .fp-grid-coll-4-24  { width: calc(100% / 24 * 4);}
-  .fp-grid-coll-5-24  { width: calc(100% / 24 * 5);}
-  .fp-grid-coll-6-24  { width: calc(100% / 24 * 6);}
-  .fp-grid-coll-7-24  { width: calc(100% / 24 * 7);}
-  .fp-grid-coll-8-24  { width: calc(100% / 24 * 8);}
-  .fp-grid-coll-9-24  { width: calc(100% / 24 * 9);}
-  .fp-grid-coll-10-24 { width: calc(100% / 24 * 10);}
-  .fp-grid-coll-11-24 { width: calc(100% / 24 * 11);}
-  .fp-grid-coll-12-24 { width: calc(100% / 24 * 12);}
-  .fp-grid-coll-13-24 { width: calc(100% / 24 * 13);}
-  .fp-grid-coll-14-24 { width: calc(100% / 24 * 14);}
-  .fp-grid-coll-15-24 { width: calc(100% / 24 * 15);}
-  .fp-grid-coll-16-24 { width: calc(100% / 24 * 16);}
-  .fp-grid-coll-17-24 { width: calc(100% / 24 * 17);}
-  .fp-grid-coll-18-24 { width: calc(100% / 24 * 18);}
-  .fp-grid-coll-19-24 { width: calc(100% / 24 * 19);}
-  .fp-grid-coll-20-24 { width: calc(100% / 24 * 20);}
-  .fp-grid-coll-21-24 { width: calc(100% / 24 * 21);}
-  .fp-grid-coll-22-24 { width: calc(100% / 24 * 22);}
-  .fp-grid-coll-23-24 { width: calc(100% / 24 * 23);}
-  .fp-grid-coll-20-24 { width: calc(100% / 24 * 20);}
-  .fp-grid-coll-21-24 { width: calc(100% / 24 * 21);}
-  .fp-grid-coll-22-24 { width: calc(100% / 24 * 22);}
-  .fp-grid-coll-23-24 { width: calc(100% / 24 * 23);}
-  .fp-grid-coll-24-24 { width: calc(100% / 24 * 24);}
-
-  .fp-grid-skip-1-24  { margin-left: calc(100% / 24 * 1);}
-  .fp-grid-skip-2-24  { margin-left: calc(100% / 24 * 2);}
-  .fp-grid-skip-3-24  { margin-left: calc(100% / 24 * 3);}
-  .fp-grid-skip-4-24  { margin-left: calc(100% / 24 * 4);}
-  .fp-grid-skip-5-24  { margin-left: calc(100% / 24 * 5);}
-  .fp-grid-skip-6-24  { margin-left: calc(100% / 24 * 6);}
-  .fp-grid-skip-7-24  { margin-left: calc(100% / 24 * 7);}
-  .fp-grid-skip-8-24  { margin-left: calc(100% / 24 * 8);}
-  .fp-grid-skip-9-24  { margin-left: calc(100% / 24 * 9);}
-  .fp-grid-skip-10-24 { margin-left: calc(100% / 24 * 10);}
-  .fp-grid-skip-11-24 { margin-left: calc(100% / 24 * 11);}
-  .fp-grid-skip-12-24 { margin-left: calc(100% / 24 * 12);}
-  .fp-grid-skip-13-24 { margin-left: calc(100% / 24 * 13);}
-  .fp-grid-skip-14-24 { margin-left: calc(100% / 24 * 14);}
-  .fp-grid-skip-15-24 { margin-left: calc(100% / 24 * 15);}
-  .fp-grid-skip-16-24 { margin-left: calc(100% / 24 * 16);}
-  .fp-grid-skip-17-24 { margin-left: calc(100% / 24 * 17);}
-  .fp-grid-skip-18-24 { margin-left: calc(100% / 24 * 18);}
-  .fp-grid-skip-19-24 { margin-left: calc(100% / 24 * 19);}
-  .fp-grid-skip-20-24 { margin-left: calc(100% / 24 * 20);}
-  .fp-grid-skip-21-24 { margin-left: calc(100% / 24 * 21);}
-  .fp-grid-skip-22-24 { margin-left: calc(100% / 24 * 22);}
-  .fp-grid-skip-23-24 { margin-left: calc(100% / 24 * 23);}
-  .fp-grid-skip-20-24 { margin-left: calc(100% / 24 * 20);}
-  .fp-grid-skip-21-24 { margin-left: calc(100% / 24 * 21);}
-  .fp-grid-skip-22-24 { margin-left: calc(100% / 24 * 22);}
-  .fp-grid-skip-23-24 { margin-left: calc(100% / 24 * 23);}
-  .fp-grid-skip-24-24 { margin-left: calc(100% / 24 * 24);}
-}
