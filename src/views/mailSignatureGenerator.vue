@@ -2,7 +2,7 @@
   <div class="v-mail-signature-generator">
     <div class="fp-grid-container">
       <div class="fp-grid-coll-22-24 fp-grid-skip-1-24">
-        <h1>Générateur de signature mail ForPro</h1>
+        <h1>Générateur de signature mail&nbsp;ForPro</h1>
 
         <form
             class="v-mail-signature-generator__content fp-ui-form"
