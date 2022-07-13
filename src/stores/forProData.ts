@@ -8,6 +8,10 @@ export const useForProDataStore = defineStore({
   state: () => ({
     dataFPApi: {
       title: "",
+      footer: {
+        left: '',
+        right: '',
+      },
       sections: {},
     },
     ArrayOfSectionAnchor: [],

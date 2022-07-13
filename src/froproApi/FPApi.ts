@@ -1,5 +1,9 @@
 export interface IFPApi {
   title: string
+  footer: {
+    left: stringFormatHasHTML,
+    right: stringFormatHasHTML,
+  }
   sections: {[key: string]: FPApiSection}
 }
 
