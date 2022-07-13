@@ -90,5 +90,23 @@ export default defineComponent({
       width: 100%;
     }
   }
+
+  @media (max-width: 1024px) {
+    .v-section-team__section-team,
+    .v-section-team__section-partners {
+      [class*='fp-grid-coll-'] {
+        width: 50%;
+      }
+    }
+  }
+
+  @media (max-width: 775px) {
+    .v-section-team__section-team,
+    .v-section-team__section-partners {
+      [class*='fp-grid-coll-'] {
+        width: 100%;
+      }
+    }
+  }
 }
 </style>
