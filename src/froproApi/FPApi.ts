@@ -16,6 +16,7 @@ export type FPApiSection =
   | IFPApiSectionIntro
   | IFPApiSectionEvolution
   | IFPApiSectionPlan
+  | IFPApiSectionPartners
 
 export interface IFPApiImage {
   "url":      string
@@ -64,6 +65,25 @@ export interface IFPApiSectionEvolution extends IFPApiSectionBase {
 
 export interface IFPApiSectionPlan extends IFPApiSectionBase {
   type:  'plan'
+}
+
+export interface IFPApiSectionPartners extends IFPApiSectionBase {
+  "team":     {
+    "name": string
+    "topic": string
+    "link": string
+    "text": string
+    "photo": {
+      [key: string]: IFPApiImage
+    }
+  }[],
+
+  "partners": {
+    "name": string
+    "topic": string
+    "link": string
+    "text": string
+  }[]
 }
 
 // api items
