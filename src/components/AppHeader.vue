@@ -137,7 +137,7 @@ export default defineComponent({
 
     .v-app-header__toggle-menu__ui-line {
       width: 100%;
-      height: 2px;
+      height: 3px;
       background: var(--color-black);
       position: relative;
       top: 0;
