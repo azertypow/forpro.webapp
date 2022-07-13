@@ -105,10 +105,14 @@ export default defineComponent({
 
 .v-timeline-item {
   align-items: center;
-  padding-top: 1rem;
+  padding-top: 0;
   padding-bottom: 1rem;
   flex-direction: row-reverse;
   position: relative;
+
+  @media (max-width: $breakpoint--small) {
+    padding-top: 1rem;
+  }
 
   .v-timeline-item__graphic {
     position: absolute;
