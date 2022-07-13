@@ -42,6 +42,7 @@ export interface IFPApiSectionBase {
   | "foundation"
   | "introduction"
   | "plan"
+  | "team"
 }
 
 export interface IFPApiSectionContact extends IFPApiSectionBase {
@@ -68,15 +69,8 @@ export interface IFPApiSectionPlan extends IFPApiSectionBase {
 }
 
 export interface IFPApiSectionPartners extends IFPApiSectionBase {
-  "team":     {
-    "name": string
-    "topic": string
-    "link": string
-    "text": string
-    "photo": {
-      [key: string]: IFPApiImage
-    }
-  }[],
+  type: 'team',
+  "team": IFPApiSectionPeopleItems[],
 
   "partners": {
     "name": string
@@ -93,4 +87,14 @@ export interface IFPApiSectionTimelineItems {
   text: stringFormatHasHTML
   categories: string
   cover: {[key: string]: IFPApiImage} | null
+}
+
+export interface IFPApiSectionPeopleItems {
+  "name": string
+  "topic": string
+  "link": string
+  "text": stringFormatHasHTML
+  "cover": {
+    [key: string]: IFPApiImage
+  }
 }

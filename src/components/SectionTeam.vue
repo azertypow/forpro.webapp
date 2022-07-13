@@ -1,0 +1,87 @@
+<template>
+  <section class="v-section-team fp-section--default fp-with-gutter fp-grid-container fp-max-width">
+
+    <div class="v-section-team__section-title fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
+      <h1>{{FPApiSectionTeam.title}}</h1>
+    </div>
+
+    <div class="v-section-team__section-team fp-remove-child-spacing fp-grid-coll-22-24 fp-grid-skip-1-24">
+      <div class="fp-grid-container fp-grid-container--align-center">
+        <div
+            v-for="item of FPApiSectionTeam.team"
+            class="fp-grid-coll-8-24 fp-with-gutter"
+        >
+          <people-item
+              :people-item="item"
+          ></people-item>
+        </div>
+      </div>
+    </div>
+
+    <div
+        class="v-section-team__section-text fp-with-gutter fp-grid-coll-11-24 fp-grid-skip-1-24"
+    >
+      <div
+          class="fp-remove-child-spacing"
+          v-html="FPApiSectionTeam.text"
+      ></div>
+    </div>
+
+    <div class="v-section-team__section-partners fp-remove-child-spacing fp-grid-coll-22-24 fp-grid-skip-1-24">
+      <div class="fp-grid-container fp-grid-container--align-center">
+        <div
+            v-for="item of FPApiSectionTeam.partners"
+            class="fp-grid-coll-8-24 fp-with-gutter"
+        >
+          <people-item
+              :people-item="item"
+          ></people-item>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</template>
+
+<script lang="ts">
+import {defineComponent} from "vue"
+import type {PropType} from 'vue';
+import type {IFPApiSectionPartners} from "@/froproApi/FPApi";
+import ImageMask from "@/components/ImageMask.vue"
+import PeopleItem from "@/components/PeopleItem.vue"
+
+export default defineComponent({
+  components: {PeopleItem, ImageMask},
+  props: {
+    FPApiSectionTeam: {
+      required: true,
+      type: Object as PropType<IFPApiSectionPartners>
+    }
+  },
+
+})</script>
+
+<style lang="scss">
+.v-section-team {
+}
+
+.v-section-team__section-title {}
+
+.v-section-team__section-team {
+
+  .v-people-item {
+    margin-top: 2rem;
+  }
+}
+
+.v-section-team__section-text {
+  margin-top: 2rem;
+}
+
+.v-section-team__section-partners {
+  .v-people-item {
+    margin-top: 2rem;
+  }
+}
+
+</style>

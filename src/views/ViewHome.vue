@@ -11,7 +11,8 @@
           section.type === 'plan'
           || section.type === 'introduction'
           || section.type === 'foundation'
-          || section.type === 'evolution'"
+          || section.type === 'evolution'
+          || section.type === 'team'"
           :anchorTitle="section.title"
       >
         <section-introduction
@@ -22,6 +23,10 @@
             v-if="section.type === 'plan'"
             :FPApiSectionPlan="section"
         ></section-plan>
+        <section-team
+            v-if="section.type === 'team'"
+            :FPApiSectionTeam="section"
+        ></section-team>
         <section-timeline
             v-if="section.type === 'evolution'"
             :FPApiSectionEvolution="section"
@@ -41,9 +46,10 @@ import SectionTimeline from "@/components/SectionTimeline.vue"
 import {useForProDataStore} from "@/stores/forProData"
 import ScrollToNav from "@/components/ScrollToNav.vue"
 import type {FPApiSection} from "@/froproApi/FPApi"
+import SectionTeam from "@/components/SectionTeam.vue"
 
 export default defineComponent({
-  components: {ScrollToNav, SectionTimeline, SectionPlan, SectionHeader, SectionIntroduction},
+  components: {SectionTeam, ScrollToNav, SectionTimeline, SectionPlan, SectionHeader, SectionIntroduction},
 
   data() {
     return {

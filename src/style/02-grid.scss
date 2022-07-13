@@ -3,6 +3,10 @@
   flex-wrap: wrap;
 }
 
+.fp-grid-container--align-center {
+  justify-content: center;
+}
+
 [class*='fp-grid-coll'] {
   display: block;
   box-sizing: border-box;
