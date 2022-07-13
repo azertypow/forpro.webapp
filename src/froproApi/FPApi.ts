@@ -94,7 +94,7 @@ export interface IFPApiSectionPeopleItems {
   "topic": string
   "link": string
   "text": stringFormatHasHTML
-  "cover": {
+  "cover"?: {
     [key: string]: IFPApiImage
   }
 }
