@@ -79,7 +79,18 @@ export default defineComponent({
 
       const svgSectionsElement = this.$refs.svgContainer.querySelectorAll('svg #Sections > *')
 
-      svgSectionsElement.forEach((value, key) => {
+      svgSectionsElement.forEach(value => {
+
+        value.addEventListener('mouseover', e => {
+          if(! (e.currentTarget instanceof SVGElement) ) return
+
+          this.activeSection({
+            name: this.getColorAndCleanedSectionName(e.currentTarget.id as string).cleanedSectionName,
+            color: this.getColorAndCleanedSectionName(e.currentTarget.id as string).color,
+            element: value,
+            id: value.id
+          })
+        })
 
         this.arrayOfSectionOver.push({
           name: this.getColorAndCleanedSectionName(value.id as string).cleanedSectionName,
@@ -106,20 +117,19 @@ export default defineComponent({
     },
 
     activeSection(section: {name: string, element: Element, color: string, id: string}) {
-      if(! (event instanceof Event) ) return
-      if(! (event.target instanceof HTMLElement) ) return
 
       this.activatedSection = section
 
       if(! (this.$refs.svgContainer instanceof HTMLElement) ) return
       if(! (this.$refs.sectionsListContainer instanceof HTMLElement) ) return
 
+
       const svgSectionsElement  = this.$refs.svgContainer.querySelectorAll('svg #Sections > *')
       const sectionNameElements = this.$refs.sectionsListContainer.querySelectorAll('div')
 
       svgSectionsElement.forEach(value => {
         if (! (value instanceof SVGElement) ) return
-        value.style.display = value.id === section.id ? 'block' : 'none'
+        value.style.opacity = value.id === section.id ? '1' : '0'
       })
 
       sectionNameElements.forEach(value => {
@@ -206,7 +216,7 @@ export default defineComponent({
   }
 
   #Sections > * {
-    display: none;
+    opacity: 0;
   }
 
   .v-section-plan__plan-container {
