@@ -56,6 +56,10 @@ export interface IFPApiSectionFoundation extends IFPApiSectionBase {
 export interface IFPApiSectionIntro extends IFPApiSectionBase {
   "type": "introduction"
   "cover": {[key: string]: IFPApiImage} | null
+  "articles": {
+      "image": {[key: string]: IFPApiImage},
+      "items": string[]
+    }[]
 }
 
 export interface IFPApiSectionEvolution extends IFPApiSectionBase {

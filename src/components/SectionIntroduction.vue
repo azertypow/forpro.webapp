@@ -6,17 +6,41 @@
           v-html="FPApiSectionIntro.text"
       ></div>
     </div>
+
     <div
-        v-if="FPApiSectionIntro.cover"
-        v-for="imageCover of FPApiSectionIntro.cover"
-        class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24">
-      <image-mask
-          filter-s-v-g-file-name="forme-1"
-          class="v-section-introduction__cover"
-          alt="cover intruduction"
-          :src="imageCover.url"
-      ></image-mask>
+        class="fp-grid-coll-22-24 fp-grid-skip-1-24"
+    >
+      <div
+          v-for="(article, counter) of FPApiSectionIntro.articles"
+          class="fp-grid-container v-section-introduction__article"
+      >
+        <div
+            class="v-section-introduction__article__img fp-grid-coll-12-24 fp-with-gutter"
+        >
+          <image-mask
+              v-for="image of article.image"
+              :src="image.url"
+              :filter-s-v-g-file-name="counter % 2 === 0 ? 'forme-1' : 'circle'"
+          ></image-mask>
+        </div>
+
+        <div
+            class="v-section-introduction__article__text fp-grid-coll-12-24"
+        >
+          <div
+              class="fp-grid-container"
+          >
+            <div
+                class="v-section-introduction__article__text__item fp-grid-coll-12-24 fp-with-gutter fp-remove-child-spacing"
+                v-for="item of article.items"
+                v-html="item"
+            ></div>
+          </div>
+        </div>
+
+      </div>
     </div>
+
   </section>
 </template>
 
@@ -32,7 +56,7 @@ export default defineComponent({
   props: {
     FPApiSectionIntro: {
       required: true,
-      type: Object as PropType<IFPApiSectionIntro | IFPApiSectionFoundation>
+      type: Object as PropType<IFPApiSectionIntro>
     }
   }
 
@@ -44,6 +68,13 @@ export default defineComponent({
 .v-section-introduction {
   background-color: var(--color-background);
 
+  .v-section-introduction__article + .v-section-introduction__article {
+    margin-top: 1rem;
+  }
+
+  strong {
+    color: var(--color-secondary);
+  }
 
   .v-section-introduction__cover {
     display: block;
@@ -59,6 +90,42 @@ export default defineComponent({
       width: 100%;
     }
   }
+
+  .v-section-introduction__article {
+    align-items: center;
+    flex-direction: row-reverse;
+
+    @media (max-width: $breakpoint--mobile) {
+      padding-left: var(--unit-gutter-half);
+      padding-right: var(--unit-gutter-half);
+    }
+
+    .v-section-introduction__article__img {
+      @media (max-width: $breakpoint--small) {
+        width: 100%;
+      }
+    }
+
+    .v-section-introduction__article__text {
+      @media (max-width: $breakpoint--small) {
+        width: 100%;
+      }
+    }
+
+    .v-section-introduction__article__text__item {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+      @media (max-width: $breakpoint--mobile) {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row;
+    }
+  }
+
 
 }
 </style>

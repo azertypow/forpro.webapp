@@ -16,9 +16,13 @@
           :anchorTitle="section.title"
       >
         <section-introduction
-            v-if="section.type === 'introduction' || section.type === 'foundation'"
+            v-if="section.type === 'introduction'"
             :FPApiSectionIntro="section"
         ></section-introduction>
+        <section-foundation
+            v-if="section.type === 'foundation'"
+            :FPApiSectionIntro="section"
+        ></section-foundation>
         <section-plan
             v-if="section.type === 'plan'"
             :FPApiSectionPlan="section"
@@ -47,9 +51,12 @@ import {useForProDataStore} from "@/stores/forProData"
 import ScrollToNav from "@/components/ScrollToNav.vue"
 import type {FPApiSection} from "@/froproApi/FPApi"
 import SectionTeam from "@/components/SectionTeam.vue"
+import SectionFoundation from "@/components/SectionFoundation.vue"
 
 export default defineComponent({
-  components: {SectionTeam, ScrollToNav, SectionTimeline, SectionPlan, SectionHeader, SectionIntroduction},
+  components: {
+    SectionFoundation,
+    SectionTeam, ScrollToNav, SectionTimeline, SectionPlan, SectionHeader, SectionIntroduction},
 
   data() {
     return {
