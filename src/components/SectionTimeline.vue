@@ -80,7 +80,7 @@ export default defineComponent({
 
   .v-section-timeline__items__item-container {
     &:nth-child(2n) {
-      margin-top: 10rem;
+      margin-top: 15rem;
     }
 
     @media all and (max-width: $breakpoint--small) {
