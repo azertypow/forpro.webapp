@@ -190,7 +190,7 @@ export default defineComponent({
       top: 0 !important;
       left: 0 !important;
       right: auto !important;
-      transform: translate(0%, 50%) !important;
+      transform: translate(20%, 50%) !important;
     }
   }
 }
