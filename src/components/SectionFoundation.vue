@@ -1,5 +1,5 @@
 <template>
-  <section class="v-section-introduction fp-section--default fp-grid-container fp-max-width">
+  <section class="v-section-fondation fp-section--default fp-grid-container fp-max-width">
     <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
       <h1>{{FPApiSectionIntro.title}}</h1>
       <div
@@ -12,7 +12,7 @@
         class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24">
       <image-mask
           filter-s-v-g-file-name="forme-1"
-          class="v-section-introduction__cover"
+          class="v-section-fondation__cover"
           alt="cover intruduction"
           :src="imageCover.url"
       ></image-mask>
@@ -41,10 +41,10 @@ export default defineComponent({
 <style lang="scss">
 @import "../style/00-sass_parameters";
 
-.v-section-introduction {
+.v-section-fondation {
   background-color: var(--color-background);
 
-  .v-section-introduction__cover {
+  .v-section-fondation__cover {
     display: block;
     width: 100%;
     max-width: 500px;
