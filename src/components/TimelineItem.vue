@@ -3,6 +3,7 @@
        :class="{
           'is-alternate': styleAlternate,
           'is-active': isActive,
+          'has-no-image': FPApiSectionTimelineItems.cover === null,
        }"
        ref="timelineElement"
   >

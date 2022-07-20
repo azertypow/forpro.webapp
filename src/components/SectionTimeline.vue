@@ -79,7 +79,7 @@ export default defineComponent({
   }
 
   .v-section-timeline__items__item-container {
-    &:nth-child(2) {
+    &:nth-child(2n) {
       margin-top: 10rem;
     }
 
