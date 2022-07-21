@@ -137,7 +137,8 @@ export default defineComponent({
 
   .v-timeline-item__title {
     color: var(--color-main);
-    margin: 0;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
     position: relative;
     transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
     opacity: 0;
