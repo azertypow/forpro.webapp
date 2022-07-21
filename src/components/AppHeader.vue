@@ -35,6 +35,11 @@
             :to="`/#${sectionAnchor}`"
             @click="forProDataStore.menuIsOpen = false"
         >{{sectionAnchor}}</RouterLink>
+        <RouterLink
+            class="fp-with-gutter fp-with-row fp-text-h2"
+            to="/#footer"
+            @click="forProDataStore.menuIsOpen = false"
+        >contact</RouterLink>
       </nav>
     </transition>
 

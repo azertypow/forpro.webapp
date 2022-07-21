@@ -1,5 +1,5 @@
 <template>
-  <div class="v-app-footer fp-section--default">
+  <div id="footer" class="v-app-footer fp-section--default">
     <div class="v-app-footer__container fp-grid-container fp-with-gutter fp-max-width">
 
       <div
