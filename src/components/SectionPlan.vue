@@ -288,7 +288,7 @@ export default defineComponent({
   }
 
   .v-section-plan__plan-container {
-    padding-top: 1rem;
+    padding-top: 2rem;
   }
 
   @media all and (max-width: $breakpoint--mobile) {
