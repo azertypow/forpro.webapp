@@ -24,7 +24,6 @@
             ref="sectionsListContainer"
         >
           <div
-              class="fp-with-gutter"
               v-for="section of arrayOfSectionOver"
               :data-id="section.id"
               @mouseover="activeSection(section)"
@@ -193,14 +192,23 @@ export default defineComponent({
   .v-section-plan__section-name {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: .5rem;
+
+    @media (max-width: $breakpoint--mobile) {
+      justify-content: center;
+    }
 
     > div {
       padding-bottom: .5rem;
       cursor: pointer;
       user-select: none;
       font-weight: 800;
+
+      @media (max-width: $breakpoint--mobile) {
+        padding-left: var(--unit-gutter);
+        padding-right: var(--unit-gutter);
+      }
     }
   }
 
