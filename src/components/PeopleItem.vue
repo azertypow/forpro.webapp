@@ -31,7 +31,7 @@
         :href="peopleItem.link"
         target="_blank"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M22.5 34H14q-4.25 0-7.125-2.875T4 24q0-4.25 2.875-7.125T14 14h8.5v3H14q-3 0-5 2t-2 5q0 3 2 5t5 2h8.5Zm-6.25-8.5v-3h15.5v3ZM25.5 34v-3H34q3 0 5-2t2-5q0-3-2-5t-5-2h-8.5v-3H34q4.25 0 7.125 2.875T44 24q0 4.25-2.875 7.125T34 34Z"/></svg>
+      <span>Lien externe</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="48" width="48"><path d="M22.5 34H14q-4.25 0-7.125-2.875T4 24q0-4.25 2.875-7.125T14 14h8.5v3H14q-3 0-5 2t-2 5q0 3 2 5t5 2h8.5Zm-6.25-8.5v-3h15.5v3ZM25.5 34v-3H34q3 0 5-2t2-5q0-3-2-5t-5-2h-8.5v-3H34q4.25 0 7.125 2.875T44 24q0 4.25-2.875 7.125T34 34Z"/></svg>
     </a>
   </div>
 </template>
@@ -56,7 +56,6 @@ export default defineComponent({
 <style lang="scss">
 .v-people-item {
   display: block;
-  text-align: center;
   text-decoration: none;
 
   .v-image-mask__img {
@@ -83,18 +82,33 @@ export default defineComponent({
 }
 
 .v-people-item__link {
-  display: block;
+  display: flex;
   text-decoration: none;
+  align-items: center;
+  margin-top: .5rem;
+
+  > * {
+    display: block;
+  }
 
   svg {
+    margin-left: .5em;
+    top: .15em;
     position: relative;
-    display: inline-block;
+    line-height: 1rem;
+    //margin: auto;
+    height: 1rem;
+    width: auto;
     transform: rotateZ(0);
     transform-origin: center;
     transition: transform 150ms ease-in-out,  color 150ms ease-in-out;
+  }
 
-    &:hover {
-      transform: rotateZ(-45deg);
+  &:hover {
+    color: var(--color-secondary);
+
+    svg {
+      transform: rotateZ(-10deg);
 
       path {
         fill: var(--color-secondary);
@@ -107,6 +121,7 @@ export default defineComponent({
 
 .v-people-item__topic {
   font-weight: 800;
-  margin-bottom: 1rem;
+  //margin-top: .5rem;
+  margin-bottom: .5rem;
 }
 </style>

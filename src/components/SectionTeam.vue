@@ -28,7 +28,7 @@
     </div>
 
     <div class="v-section-team__section-partners fp-remove-child-spacing fp-grid-coll-22-24 fp-grid-skip-1-24">
-      <div class="fp-grid-container fp-grid-container--align-center">
+      <div class="fp-grid-container">
         <div
             v-for="item of FPApiSectionTeam.partners"
             class="fp-grid-coll-8-24 fp-with-gutter"
