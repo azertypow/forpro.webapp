@@ -1,8 +1,6 @@
 <template>
-  <a
+  <div
       class="v-people-item"
-      :href="peopleItem.link"
-      target="_blank"
   >
     <div
         class="v-people-item__img"
@@ -27,11 +25,15 @@
         class="v-people-item__text fp-remove-child-spacing"
     ></div>
 
-    <div
+    <a
         class="v-people-item__link"
         v-if="peopleItem.link"
-    ><span>+</span></div>
-  </a>
+        :href="peopleItem.link"
+        target="_blank"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M22.5 34H14q-4.25 0-7.125-2.875T4 24q0-4.25 2.875-7.125T14 14h8.5v3H14q-3 0-5 2t-2 5q0 3 2 5t5 2h8.5Zm-6.25-8.5v-3h15.5v3ZM25.5 34v-3H34q3 0 5-2t2-5q0-3-2-5t-5-2h-8.5v-3H34q4.25 0 7.125 2.875T44 24q0 4.25-2.875 7.125T34 34Z"/></svg>
+    </a>
+  </div>
 </template>
 
 <script lang="ts">
@@ -63,11 +65,6 @@ export default defineComponent({
   }
 
   &:hover {
-    .v-people-item__link span {
-      transform: rotateZ(45deg);
-      color: var(--color-secondary);
-    }
-
     .v-image-mask__img {
       transform: scale(.95);
     }
@@ -89,18 +86,27 @@ export default defineComponent({
   display: block;
   text-decoration: none;
 
-  span {
+  svg {
     position: relative;
     display: inline-block;
-    height: 1rem;
-    width: 1rem;
-    line-height: 1em;
     transform: rotateZ(0);
     transform-origin: center;
     transition: transform 150ms ease-in-out,  color 150ms ease-in-out;
+
+    &:hover {
+      transform: rotateZ(-45deg);
+
+      path {
+        fill: var(--color-secondary);
+      }
+    }
   }
 }
 
 .v-people-item__text {}
-.v-people-item__topic {}
+
+.v-people-item__topic {
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
 </style>
