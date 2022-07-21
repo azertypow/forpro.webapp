@@ -52,6 +52,7 @@ export interface IFPApiSectionContact extends IFPApiSectionBase {
 export interface IFPApiSectionFoundation extends IFPApiSectionBase {
   "type": "foundation"
   "cover": {[key: string]: IFPApiImage} | null
+  "team": IFPApiSectionPeopleItems[]
 }
 export interface IFPApiSectionIntro extends IFPApiSectionBase {
   "type": "introduction"

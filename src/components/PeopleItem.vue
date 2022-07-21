@@ -1,6 +1,7 @@
 <template>
   <div
       class="v-people-item"
+      :class="{'with-image': peopleItem.cover}"
   >
     <div
         class="v-people-item__img"
@@ -68,60 +69,67 @@ export default defineComponent({
       transform: scale(.95);
     }
   }
-}
 
-.v-people-item__img {
-  margin: auto;
-  max-width: 250px;
-  padding-bottom: 1rem;
-}
-
-.v-people-item__name {
-  font-weight: 800;
-  color: var(--color-secondary);
-}
-
-.v-people-item__link {
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-  margin-top: .5rem;
-
-  > * {
-    display: block;
+  .v-people-item__img {
+    margin: auto;
+    max-width: 250px;
+    padding-bottom: 1rem;
   }
 
-  svg {
-    margin-left: .5em;
-    top: .15em;
-    position: relative;
-    line-height: 1rem;
-    //margin: auto;
-    height: 1rem;
-    width: auto;
-    transform: rotateZ(0);
-    transform-origin: center;
-    transition: transform 150ms ease-in-out,  color 150ms ease-in-out;
-  }
-
-  &:hover {
+  .v-people-item__name {
+    font-weight: 800;
     color: var(--color-secondary);
+  }
+
+  .v-people-item__link {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    margin-top: .5rem;
+
+    > * {
+      display: block;
+    }
 
     svg {
-      transform: rotateZ(-10deg);
+      margin-left: .5em;
+      top: .15em;
+      position: relative;
+      line-height: 1rem;
+      //margin: auto;
+      height: 1rem;
+      width: auto;
+      transform: rotateZ(0);
+      transform-origin: center;
+      transition: transform 150ms ease-in-out,  color 150ms ease-in-out;
+    }
 
-      path {
-        fill: var(--color-secondary);
+    &:hover {
+      color: var(--color-secondary);
+
+      svg {
+        transform: rotateZ(-10deg);
+
+        path {
+          fill: var(--color-secondary);
+        }
       }
     }
   }
-}
 
-.v-people-item__text {}
+  .v-people-item__text {}
 
-.v-people-item__topic {
-  font-weight: 800;
-  //margin-top: .5rem;
-  margin-bottom: .5rem;
+  .v-people-item__topic {
+    font-weight: 800;
+    margin-bottom: .5rem;
+  }
+
+  &.with-image {
+    text-align: center;
+
+    .v-people-item__link {
+      justify-content: center;
+    }
+  }
 }
 </style>
