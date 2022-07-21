@@ -29,6 +29,20 @@
               @mouseover="activeSection(section)"
           >{{section.name}}</div>
         </div>
+
+        <div
+            class="v-section-plan__desc"
+            v-if="activatedSection"
+        >
+          <div class="fp-remove-child-spacing" v-if="activatedSection.name === 'Accueil'"            v-html="FPApiSectionPlan.zoneReception" ></div>
+          <div class="fp-remove-child-spacing" v-if="activatedSection.name === 'LearningLab'"        v-html="FPApiSectionPlan.zoneLearningLab" ></div>
+          <div class="fp-remove-child-spacing" v-if="activatedSection.name === 'MakerLab'"           v-html="FPApiSectionPlan.zoneMakerLab" ></div>
+          <div class="fp-remove-child-spacing" v-if="activatedSection.name === 'FoodLab'"            v-html="FPApiSectionPlan.zoneFoodLab" ></div>
+          <div class="fp-remove-child-spacing" v-if="activatedSection.name === 'Entreprises'"        v-html="FPApiSectionPlan.zoneEntreprises" ></div>
+          <div class="fp-remove-child-spacing" v-if="activatedSection.name === ' École Horlogerie'"  v-html="FPApiSectionPlan.zoneSchool" ></div>
+          <div class="fp-remove-child-spacing" v-if="activatedSection.name === 'Crèche'"             v-html="FPApiSectionPlan.zoneNursery" ></div>
+        </div>
+
         <div class="v-section-plan__plan"
              :style="{
                 transform: transitionStyleValue.transformValue,
@@ -193,7 +207,7 @@ export default defineComponent({
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: .5rem;
+    //padding-bottom: .5rem;
 
     @media (max-width: $breakpoint--mobile) {
       justify-content: center;
@@ -210,6 +224,10 @@ export default defineComponent({
         padding-right: var(--unit-gutter);
       }
     }
+  }
+
+  .v-section-plan__desc {
+    padding-bottom: 1rem;
   }
 
   .v-section-plan__plan {

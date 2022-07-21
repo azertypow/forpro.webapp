@@ -71,6 +71,13 @@ export interface IFPApiSectionEvolution extends IFPApiSectionBase {
 
 export interface IFPApiSectionPlan extends IFPApiSectionBase {
   type:  'plan'
+  "zoneReception":    string
+  "zoneLearningLab":  string
+  "zoneMakerLab":     string
+  "zoneFoodLab":      string
+  "zoneSchool":       string
+  "zoneNursery":      string
+  "zoneEntreprises":  string
 }
 
 export interface IFPApiSectionPartners extends IFPApiSectionBase {
