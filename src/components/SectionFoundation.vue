@@ -9,15 +9,21 @@
     </div>
 
     <div
-        v-if="FPApiSectionIntro.cover"
-        v-for="imageCover of FPApiSectionIntro.cover"
+        ref="coverContainer"
         class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24">
-      <image-mask
-          filter-s-v-g-file-name="forme-1"
-          class="v-section-fondation__cover"
-          alt="cover intruduction"
-          :src="imageCover.url"
-      ></image-mask>
+      <div
+          ref="cover"
+      >
+        <image-mask
+            v-if="FPApiSectionIntro.cover"
+            v-for="imageCover of FPApiSectionIntro.cover"
+            filter-s-v-g-file-name="forme-1"
+            class="v-section-fondation__cover"
+            alt="cover intruduction"
+            :src="imageCover.url"
+            :style="{transform: `translateY(${topCoverTransformValue}px)`}"
+        ></image-mask>
+      </div>
     </div>
 
     <div class="v-section-team__section-team fp-remove-child-spacing fp-grid-coll-22-24 fp-grid-skip-1-24">
@@ -53,19 +59,59 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue"
+import {defineComponent, VueElement} from "vue"
 import type {PropType} from "vue"
 import ImageMask from "@/components/ImageMask.vue"
 import type {IFPApiSectionFoundation, IFPApiSectionIntro} from "@/froproApi/FPApi"
 import PeopleItem from "@/components/PeopleItem.vue"
 
 export default defineComponent({
+  $refs: {
+    coverContainer: HTMLElement
+  },
+
   components: {PeopleItem, ImageMask},
 
   props: {
     FPApiSectionIntro: {
       required: true,
       type: Object as PropType<IFPApiSectionFoundation>
+    }
+  },
+
+  data() {
+    return {
+      topCoverTransformValue: 0
+    }
+  },
+
+  mounted() {
+    window.addEventListener('scroll', this.onScrollEvent)
+  },
+
+  deactivated() {
+    window.removeEventListener('scroll', this.onScrollEvent)
+  },
+
+  methods: {
+    onScrollEvent() {
+      if(! (this.$refs.coverContainer instanceof HTMLElement) ) return
+      if(! (this.$refs.cover instanceof HTMLElement) ) return
+
+      const marginTop = 100
+
+      const top    = this.$refs.coverContainer.getBoundingClientRect().top
+      const bottom = this.$refs.coverContainer.getBoundingClientRect().bottom - this.$refs.cover.getBoundingClientRect().height - marginTop
+
+      if      (top > 0 && bottom > 0)
+        this.topCoverTransformValue = 0
+      else if (top < 0 && bottom > 0)
+        this.topCoverTransformValue = - this.$refs.coverContainer.getBoundingClientRect().top + marginTop
+      else if (top < 0 && bottom < 0)
+        this.topCoverTransformValue =
+            this.$refs.coverContainer.getBoundingClientRect().height - this.$refs.cover.getBoundingClientRect().height
+
+      console.log(bottom, this.$refs.coverContainer.getBoundingClientRect().bottom, this.$refs.coverContainer.getBoundingClientRect().height, this.$refs.cover.getBoundingClientRect().height)
     }
   }
 
@@ -83,6 +129,7 @@ export default defineComponent({
     max-width: 500px;
     margin: auto;
     box-sizing: border-box;
+    transition: transform linear 150ms;
   }
 
   .v-section-team__section-team {
