@@ -39,7 +39,7 @@
             class="fp-with-gutter fp-with-row fp-text-h2"
             to="/#footer"
             @click="forProDataStore.menuIsOpen = false"
-        >contact</RouterLink>
+        >Contact</RouterLink>
       </nav>
     </transition>
 
