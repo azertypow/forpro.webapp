@@ -33,6 +33,22 @@
       </div>
     </div>
 
+    <div class="v-section-team__section-team fp-remove-child-spacing fp-grid-coll-22-24 fp-grid-skip-1-24">
+      <div class="fp-with-gutter fp-remove-child-spacing">
+        <h2>Le Conseil de Fondation</h2>
+      </div>
+      <div class="fp-grid-container">
+        <div
+            v-for="item of FPApiSectionIntro.team"
+            class="fp-grid-coll-8-24 fp-with-gutter"
+        >
+          <people-item
+              :people-item="item"
+          ></people-item>
+        </div>
+      </div>
+    </div>
+
   </section>
 </template>
 
@@ -70,6 +86,10 @@ export default defineComponent({
   }
 
   .v-section-team__section-team {
+    &+.v-section-team__section-team {
+      margin-top: 4rem;
+    }
+
     .v-people-item {
       margin-top: 2rem;
     }
