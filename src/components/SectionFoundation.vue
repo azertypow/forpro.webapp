@@ -42,16 +42,23 @@
     <div class="v-section-team__section-conseil fp-remove-child-spacing fp-grid-coll-22-24 fp-grid-skip-1-24">
       <div class="fp-with-gutter fp-remove-child-spacing">
         <h2>Le Conseil de Fondation</h2>
-      </div>
-      <div class="fp-grid-container">
-        <div
-            v-for="item of FPApiSectionIntro.conseil"
-            class="fp-grid-coll-8-24 fp-with-gutter"
-        >
-          <people-item
-              :people-item="item"
-          ></people-item>
-        </div>
+        <ul>
+          <li
+              v-for="item of FPApiSectionIntro.conseil"
+          >
+            {{item.name}},
+            {{item.topic}}
+            <br v-if="item.text">{{item.text}}
+            <br v-if="item.link"><a
+              class="fp-ui-external-link"
+              v-if="item.link"
+              :href="item.link"
+              target="_blank"
+          >
+            <span>Lien externe</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="48" width="48"><path d="M22.5 34H14q-4.25 0-7.125-2.875T4 24q0-4.25 2.875-7.125T14 14h8.5v3H14q-3 0-5 2t-2 5q0 3 2 5t5 2h8.5Zm-6.25-8.5v-3h15.5v3ZM25.5 34v-3H34q3 0 5-2t2-5q0-3-2-5t-5-2h-8.5v-3H34q4.25 0 7.125 2.875T44 24q0 4.25-2.875 7.125T34 34Z"/></svg>
+          </a>
+          </li>
+        </ul>
       </div>
     </div>
 

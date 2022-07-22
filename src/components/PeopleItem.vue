@@ -27,7 +27,7 @@
     ></div>
 
     <a
-        class="v-people-item__link"
+        class="v-people-item__link fp-ui-external-link"
         v-if="peopleItem.link"
         :href="peopleItem.link"
         target="_blank"
@@ -79,42 +79,6 @@ export default defineComponent({
   .v-people-item__name {
     font-weight: 800;
     color: var(--color-secondary);
-  }
-
-  .v-people-item__link {
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    margin-top: .5rem;
-
-    > * {
-      display: block;
-    }
-
-    svg {
-      margin-left: .5em;
-      top: .15em;
-      position: relative;
-      line-height: 1rem;
-      //margin: auto;
-      height: 1rem;
-      width: auto;
-      transform: rotateZ(0);
-      transform-origin: center;
-      transition: transform 150ms ease-in-out,  color 150ms ease-in-out;
-    }
-
-    &:hover {
-      color: var(--color-secondary);
-
-      svg {
-        transform: rotateZ(-10deg);
-
-        path {
-          fill: var(--color-secondary);
-        }
-      }
-    }
   }
 
   .v-people-item__text {}
