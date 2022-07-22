@@ -53,6 +53,7 @@ export interface IFPApiSectionFoundation extends IFPApiSectionBase {
   "type": "foundation"
   "cover": {[key: string]: IFPApiImage} | null
   "team": IFPApiSectionPeopleItems[]
+  "conseil": IFPApiSectionPartnerItems[]
 }
 export interface IFPApiSectionIntro extends IFPApiSectionBase {
   "type": "introduction"
@@ -83,13 +84,7 @@ export interface IFPApiSectionPlan extends IFPApiSectionBase {
 export interface IFPApiSectionPartners extends IFPApiSectionBase {
   type: 'team',
   "team": IFPApiSectionPeopleItems[],
-
-  "partners": {
-    "name": string
-    "topic": string
-    "link": string
-    "text": string
-  }[]
+  "partners": IFPApiSectionPartnerItems[]
 }
 
 // api items
@@ -100,6 +95,14 @@ export interface IFPApiSectionTimelineItems {
   categories: string
   cover: {[key: string]: IFPApiImage} | null
 }
+
+export interface IFPApiSectionPartnerItems {
+  "name": string
+  "topic": string
+  "link": string
+  "text": stringFormatHasHTML
+}
+
 
 export interface IFPApiSectionPeopleItems {
   "name": string
