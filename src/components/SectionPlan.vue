@@ -39,16 +39,15 @@
         >
           <div
               class="v-section-plan__description-container fp-remove-child-spacing"
-              v-if="activatedSection"
               ref="zoneDescriptionContainer"
           >
-            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'Accueil'}"            v-html="FPApiSectionPlan.zoneReception" ></div>
-            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'LearningLab'}"        v-html="FPApiSectionPlan.zoneLearningLab" ></div>
-            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'MakerLab'}"           v-html="FPApiSectionPlan.zoneMakerLab" ></div>
-            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'FoodLab'}"            v-html="FPApiSectionPlan.zoneFoodLab" ></div>
-            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'Entreprises'}"        v-html="FPApiSectionPlan.zoneEntreprises" ></div>
-            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === ' École Horlogerie'}"  v-html="FPApiSectionPlan.zoneSchool" ></div>
-            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'Crèche'}"             v-html="FPApiSectionPlan.zoneNursery" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection !== null && activatedSection.name === 'Accueil'}"            v-html="FPApiSectionPlan.zoneReception" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection !== null && activatedSection.name === 'LearningLab'}"        v-html="FPApiSectionPlan.zoneLearningLab" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection !== null && activatedSection.name === 'MakerLab'}"           v-html="FPApiSectionPlan.zoneMakerLab" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection !== null && activatedSection.name === 'FoodLab'}"            v-html="FPApiSectionPlan.zoneFoodLab" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection !== null && activatedSection.name === 'Entreprises'}"        v-html="FPApiSectionPlan.zoneEntreprises" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection !== null && activatedSection.name === ' École Horlogerie'}"  v-html="FPApiSectionPlan.zoneSchool" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection !== null && activatedSection.name === 'Crèche'}"             v-html="FPApiSectionPlan.zoneNursery" ></div>
           </div>
         </div>
 
@@ -162,6 +161,8 @@ export default defineComponent({
 
       const zoneDescriptionContainer = this.$refs.zoneDescriptionContainer
       if( !(zoneDescriptionContainer instanceof HTMLElement) ) return
+
+      console.log("run activeSection")
 
       const descriptionElements = zoneDescriptionContainer.querySelectorAll('div')
 
