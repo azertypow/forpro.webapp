@@ -2,7 +2,7 @@
   <section class="v-section-team fp-section--default fp-grid-container fp-max-width">
 
     <div class="v-section-team__section-title fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
-      <h1>{{FPApiSectionTeam.title}}</h1>
+      <h2>{{FPApiSectionTeam.title}}</h2>
     </div>
 
     <div class="fp-grid-coll-24-24"></div>

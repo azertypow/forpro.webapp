@@ -11,8 +11,7 @@
           section.type === 'plan'
           || section.type === 'introduction'
           || section.type === 'foundation'
-          || section.type === 'evolution'
-          || section.type === 'team'"
+          || section.type === 'evolution'"
           :anchorTitle="section.title"
       >
         <section-introduction
@@ -27,16 +26,30 @@
             v-if="section.type === 'plan'"
             :FPApiSectionPlan="section"
         ></section-plan>
-        <section-team
-            v-if="section.type === 'team'"
-            :FPApiSectionTeam="section"
-        ></section-team>
         <section-timeline
             v-if="section.type === 'evolution'"
             :FPApiSectionEvolution="section"
         ></section-timeline>
       </scroll-to-nav>
     </div>
+    <scroll-to-nav
+        v-if="listedActors.length > 0"
+        anchorTitle="Les acteurs"
+    >
+      <div>
+        <div
+            style="padding-bottom: 0;"
+            class="v-section-team fp-section--default fp-grid-container fp-max-width">
+          <div class="v-section-team__section-title fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
+            <h1>Les acteurs</h1>
+          </div>
+        </div>
+        <section-team
+            v-for="teamSection of listedActors"
+            :FPApiSectionTeam="teamSection"
+        ></section-team>
+      </div>
+    </scroll-to-nav>
 
   </main>
 </template>
@@ -52,6 +65,7 @@ import ScrollToNav from "@/components/ScrollToNav.vue"
 import type {FPApiSection} from "@/froproApi/FPApi"
 import SectionTeam from "@/components/SectionTeam.vue"
 import SectionFoundation from "@/components/SectionFoundation.vue"
+import type {IFPApiSectionPartners} from "@/froproApi/FPApi"
 
 export default defineComponent({
   components: {
@@ -69,7 +83,12 @@ export default defineComponent({
       return Object.values(this.forProDataStore.dataFPApi.sections).filter(value => {
         return value.status === 'listed'
       })
-    }
+    },
+    listedActors(): IFPApiSectionPartners[] {
+      return this.listedStatusSection.filter(value =>{
+        return value.type === 'team'
+      }) as IFPApiSectionPartners[]
+    },
   }
 
 })</script>
