@@ -41,8 +41,15 @@
               class="v-section-plan__description-container fp-remove-child-spacing"
               v-if="activatedSection"
               ref="zoneDescriptionContainer"
-              v-html="descriptionContainerContent"
-          ></div>
+          >
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'Accueil'}"            v-html="FPApiSectionPlan.zoneReception" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'LearningLab'}"        v-html="FPApiSectionPlan.zoneLearningLab" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'MakerLab'}"           v-html="FPApiSectionPlan.zoneMakerLab" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'FoodLab'}"            v-html="FPApiSectionPlan.zoneFoodLab" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'Entreprises'}"        v-html="FPApiSectionPlan.zoneEntreprises" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === ' École Horlogerie'}"  v-html="FPApiSectionPlan.zoneSchool" ></div>
+            <div class="fp-remove-child-spacing" :class="{'is-active': activatedSection.name === 'Crèche'}"             v-html="FPApiSectionPlan.zoneNursery" ></div>
+          </div>
         </div>
 
         <div class="v-section-plan__plan"
@@ -156,29 +163,14 @@ export default defineComponent({
       const zoneDescriptionContainer = this.$refs.zoneDescriptionContainer
       if( !(zoneDescriptionContainer instanceof HTMLElement) ) return
 
-      this.descriptionContainerContent = (() => {
-        if (this.activatedSection === null)                     return ''
+      const descriptionElements = zoneDescriptionContainer.querySelectorAll('div')
 
-        else switch (this.activatedSection.name) {
-          case 'Accueil':
-            return this.FPApiSectionPlan.zoneReception
-          case 'LearningLab':
-            return this.FPApiSectionPlan.zoneLearningLab
-          case 'MakerLab':
-            return this.FPApiSectionPlan.zoneMakerLab
-          case 'FoodLab':
-            return this.FPApiSectionPlan.zoneFoodLab
-          case 'Entreprises':
-            return this.FPApiSectionPlan.zoneEntreprises
-          case ' École Horlogerie':
-            return this.FPApiSectionPlan.zoneSchool
-          case 'Crèche':
-            return this.FPApiSectionPlan.zoneNursery
-          default:
-              return ''
-        }
-      })()
-      setTimeout(() => {this.descriptionContainerHeight = zoneDescriptionContainer.getBoundingClientRect().height}, 250)
+      console.log(descriptionElements)
+
+      this.descriptionContainerHeight
+          = Math.max(...Object.values(descriptionElements).map(element => {
+            return element.getBoundingClientRect().height
+          }))
 
     },
 
@@ -266,10 +258,19 @@ export default defineComponent({
   }
 
   .v-section-plan__description-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: relative;
+
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
   }
 
   .v-section-plan__plan {
