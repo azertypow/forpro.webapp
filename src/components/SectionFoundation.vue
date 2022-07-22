@@ -21,7 +21,7 @@
             class="v-section-fondation__cover"
             alt="cover intruduction"
             :src="imageCover.url"
-            :style="{transform: `translateY(${topCoverTransformValue}px)`}"
+            :style="{transform: `translate3d(0, ${topCoverTransformValue}px, 0)`}"
         ></image-mask>
       </div>
     </div>
@@ -100,7 +100,7 @@ export default defineComponent({
 
       const marginTop = 100
 
-      const top    = this.$refs.coverContainer.getBoundingClientRect().top
+      const top    = this.$refs.coverContainer.getBoundingClientRect().top - marginTop
       const bottom = this.$refs.coverContainer.getBoundingClientRect().bottom - this.$refs.cover.getBoundingClientRect().height - marginTop
 
       if      (top > 0 && bottom > 0)
@@ -129,7 +129,11 @@ export default defineComponent({
     max-width: 500px;
     margin: auto;
     box-sizing: border-box;
-    transition: transform linear 150ms;
+    //transition: transform linear 150ms;
+
+    @media (max-width: $breakpoint--mobile) {
+      transform: none !important;
+    }
   }
 
   .v-section-team__section-team {
