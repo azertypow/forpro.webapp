@@ -23,6 +23,16 @@
     </div>
 
     <transition
+        name="fade-from"
+    >
+      <div
+          class="v-app-header__cach"
+          v-if="forProDataStore.menuIsOpen"
+          @click="forProDataStore.menuIsOpen = false"
+      ></div>
+    </transition>
+
+    <transition
         name="fade-from-right"
     >
       <nav
@@ -91,6 +101,7 @@ export default defineComponent({
     min-width: 50%;
     height: calc(100% - var(--header-height) );
     background-color: var(--color-background);
+    z-index: 11;
 
     > * {
       margin-top: .5rem;
@@ -101,6 +112,17 @@ export default defineComponent({
         color: var(--color-main);
       }
     }
+  }
+
+  .v-app-header__cach {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: calc(100% - var(--header-height) );
+    top: var(--header-height);
+    left: 0;
+    background: black;
+    opacity: .8;
   }
 
   .v-app-header__toggle-theme {
@@ -183,6 +205,17 @@ export default defineComponent({
   {
     opacity: 0;
     transform: translate(25%);
+  }
+
+  .fade-from-enter-active,
+  .fade-from-leave-active,
+  {
+    transition: opacity .5s ease-in-out;
+  }
+  .fade-from-enter-from,
+  .fade-from-leave-to,
+  {
+    opacity: 0;
   }
 }
 

@@ -61,7 +61,7 @@ export default defineComponent({
   .v-app-footer {
     transform-origin: top left;
     transform: translateX( 0 );
-    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+    transition: transform .5s ease-in-out;
   }
 
   &.menu-is-open {
@@ -69,7 +69,6 @@ export default defineComponent({
     .v-app__router-view,
     .v-app-footer {
       transform: translateX( -2% );
-      opacity: .5;
     }
   }
 }
