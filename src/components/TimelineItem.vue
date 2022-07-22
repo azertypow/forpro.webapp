@@ -38,7 +38,7 @@
         <image-mask
             v-for="coverImage of FPApiSectionTimelineItems.cover"
             filter-s-v-g-file-name="circle"
-            :src="coverImage.url"
+            :src="coverImage.resize.reg"
         ></image-mask>
       </div>
       <div class="fp-grid-coll-3-24"></div>

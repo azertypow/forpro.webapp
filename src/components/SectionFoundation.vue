@@ -20,7 +20,7 @@
             filter-s-v-g-file-name="forme-1"
             class="v-section-fondation__cover"
             alt="cover intruduction"
-            :src="imageCover.url"
+            :src="imageCover.resize.reg"
             :style="{transform: `translate3d(0, ${topCoverTransformValue}px, 0)`}"
         ></image-mask>
       </div>
@@ -105,6 +105,8 @@ export default defineComponent({
       if(! (this.$refs.coverContainer instanceof HTMLElement) ) return
       if(! (this.$refs.cover instanceof HTMLElement) ) return
 
+      if( this.$refs.coverContainer.getBoundingClientRect().height < window.innerHeight + 200) return
+
       const marginTop = 100
 
       const top    = this.$refs.coverContainer.getBoundingClientRect().top - marginTop
@@ -118,7 +120,7 @@ export default defineComponent({
         this.topCoverTransformValue =
             this.$refs.coverContainer.getBoundingClientRect().height - this.$refs.cover.getBoundingClientRect().height
 
-      console.log(bottom, this.$refs.coverContainer.getBoundingClientRect().bottom, this.$refs.coverContainer.getBoundingClientRect().height, this.$refs.cover.getBoundingClientRect().height)
+      console.log( this.$refs.coverContainer.getBoundingClientRect().height, window.innerHeight )
     }
   }
 

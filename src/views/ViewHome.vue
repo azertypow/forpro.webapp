@@ -41,11 +41,11 @@
             style="padding-bottom: 2rem;"
             class="fp-section--default fp-grid-container fp-max-width">
           <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
-            <h1>Les acteurs</h1>
+            <h1>les acteurs et actrices</h1>
           </div>
         </div>
         <section-team
-            style="padding-top: 0rem"
+            style="padding-top: 0"
             class=""
             v-for="teamSection of listedActors"
             :FPApiSectionTeam="teamSection"

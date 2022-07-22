@@ -19,7 +19,7 @@
         >
           <image-mask
               v-for="image of article.image"
-              :src="image.url"
+              :src="image.resize.reg"
               :filter-s-v-g-file-name="counter % 2 === 0 ? 'forme-1' : 'circle'"
           ></image-mask>
         </div>

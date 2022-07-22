@@ -8,7 +8,7 @@
         v-for="cover of peopleItem.cover"
     >
       <image-mask
-          :src="cover.mediaUrl"
+          :src="cover.resize.small"
           filter-s-v-g-file-name="circle"
       ></image-mask>
     </div>

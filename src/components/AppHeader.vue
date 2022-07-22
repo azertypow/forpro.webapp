@@ -41,12 +41,12 @@
       >
         <RouterLink
             v-for="sectionAnchor of forProDataStore.ArrayOfSectionAnchor"
-            class="fp-with-gutter fp-with-row fp-text-h2"
+            class="v-app-header__nav__link fp-with-gutter fp-with-row fp-text-h1"
             :to="`/#${sectionAnchor}`"
             @click="forProDataStore.menuIsOpen = false"
         >{{sectionAnchor}}</RouterLink>
         <RouterLink
-            class="fp-with-gutter fp-with-row fp-text-h2"
+            class="v-app-header__nav__link fp-with-gutter fp-with-row fp-text-h1"
             to="/#footer"
             @click="forProDataStore.menuIsOpen = false"
         >Contact</RouterLink>
@@ -73,6 +73,7 @@ export default defineComponent({
 
 <style lang="scss">
 @import "../style/00-sass_parameters";
+@import "../style/01-typography";
 
 .v-app-header {
   height: var(--header-height);
@@ -103,14 +104,20 @@ export default defineComponent({
     background-color: var(--color-background);
     z-index: 11;
 
-    > * {
-      margin-top: .5rem;
-      margin-bottom: 0;
-      text-decoration: none;
+  }
 
-      &:hover {
-        color: var(--color-main);
-      }
+  .v-app-header__nav__link {
+    @media (max-width: 1400px) {
+      @include fp-text-h2;
+      margin: 0;
+    }
+
+    margin-top: .5rem;
+    margin-bottom: 0;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-main);
     }
   }
 
