@@ -120,7 +120,6 @@ export default defineComponent({
         this.topCoverTransformValue =
             this.$refs.coverContainer.getBoundingClientRect().height - this.$refs.cover.getBoundingClientRect().height
 
-      console.log( this.$refs.coverContainer.getBoundingClientRect().height, window.innerHeight )
     }
   }
 

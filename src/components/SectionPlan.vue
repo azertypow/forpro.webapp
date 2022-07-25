@@ -160,11 +160,7 @@ export default defineComponent({
       const zoneDescriptionContainer = this.$refs.zoneDescriptionContainer
       if( !(zoneDescriptionContainer instanceof HTMLElement) ) return
 
-      console.log("run activeSection")
-
       const descriptionElements = zoneDescriptionContainer.querySelectorAll('div')
-
-      console.log(descriptionElements)
 
       this.descriptionContainerHeight
           = Math.max(...Object.values(descriptionElements).map(element => {
