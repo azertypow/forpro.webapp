@@ -84,12 +84,6 @@ export default defineComponent({
   .v-app-header__left {
     display: flex;
     align-items: center;
-
-    @media all and (max-width: $breakpoint--small) {
-      > div {
-        display: none;
-      }
-    }
   }
 
   .v-app-header__nav {
@@ -155,6 +149,10 @@ export default defineComponent({
 
   .v-app-header__baseline {
     margin-left:  var(--unit-gutter);
+
+    @media all and (max-width: $breakpoint--mobile) {
+      display: none;
+    }
   }
 
   .v-app-header__toggle-menu {

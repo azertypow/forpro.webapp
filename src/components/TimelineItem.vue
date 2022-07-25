@@ -16,7 +16,7 @@
 <!--    -->
     <div class="fp-grid-coll-2-24"></div>
     <div class="fp-grid-coll-20-24">
-      <h5 class="v-timeline-item__date">{{FPApiSectionTimelineItems.date}}</h5>
+      <h5 class="v-timeline-item__date">{{getFormatDate}}</h5>
       <h2 class="v-timeline-item__title">{{FPApiSectionTimelineItems.title}}</h2>
       <div
           class="v-timeline-item__content fp-remove-child-spacing"
@@ -84,6 +84,13 @@ export default defineComponent({
     },
 
     removeScrollListener() { window.removeEventListener('scroll', this.addActiveClass) }
+  },
+
+  computed: {
+    getFormatDate(): string {
+      const date = new Date(this.FPApiSectionTimelineItems.date)
+      return `${date.getDay().toLocaleString('fr-FR', {minimumIntegerDigits: 2})}:${date.getMonth().toLocaleString('fr-FR', {minimumIntegerDigits: 2})}:${date.getFullYear()}`
+    }
   },
 
   props: {

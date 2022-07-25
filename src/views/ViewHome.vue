@@ -34,14 +34,14 @@
     </div>
     <scroll-to-nav
         v-if="listedActors.length > 0"
-        anchorTitle="Les acteurs"
+        anchorTitle="Les acteurs et actrices"
     >
       <div>
         <div
             style="padding-bottom: 2rem;"
             class="fp-section--default fp-grid-container fp-max-width">
-          <div class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
-            <h1>les acteurs et actrices</h1>
+          <div class="v-view-home__section-title fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24">
+            <h1>Les acteurs et&nbsp;actrices</h1>
           </div>
         </div>
         <section-team
@@ -96,6 +96,14 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/00-sass_parameters";
+
 .v-view-home {
+  .v-view-home__section-title {
+    @media (max-width: $breakpoint--mobile) {
+      width: 100%;
+      margin: 0;
+    }
+  }
 }
 </style>
