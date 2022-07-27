@@ -89,7 +89,8 @@ export default defineComponent({
   computed: {
     getFormatDate(): string {
       const date = new Date(this.FPApiSectionTimelineItems.date)
-      return `${date.getDay().toLocaleString('fr-FR', {minimumIntegerDigits: 2})}.${date.getMonth().toLocaleString('fr-FR', {minimumIntegerDigits: 2})}.${date.getFullYear()}`
+
+      return `${date.getDate().toLocaleString('fr-FR', {minimumIntegerDigits: 2})}.${(date.getMonth() + 1).toLocaleString('fr-FR', {minimumIntegerDigits: 2})}.${date.getFullYear()}`
     }
   },
 
