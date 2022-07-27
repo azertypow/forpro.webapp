@@ -13,11 +13,10 @@ export function formatHtmlContentWithReversesMail(content: StringFormatWithRever
     const contentFormatted  = reverseMailInString(linkElement.innerHTML)
 
     linkElement.href              = '#'
-    linkElement.innerHTML         = "voir le contact"
+    linkElement.innerHTML         = "voir le mail"
 
     linkElement.addEventListener('click', ev => {
       ev.preventDefault()
-      console.log("coucou")
       linkElement.innerHTML = contentFormatted
       linkElement.href      = hrefFormatted
     })
