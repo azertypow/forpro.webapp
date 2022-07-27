@@ -1,15 +1,16 @@
 export interface IFPApi {
   title: string
   footer: {
-    left: stringFormatHasHTML,
-    right: stringFormatHasHTML,
+    left: StringFormatHasHTML,
+    right: StringFormatHasHTML,
   }
   sections: {[key: string]: FPApiSection}
 }
 
 // global
 export type FPApiStatus = 'listed' | 'draft'
-export type stringFormatHasHTML = string
+export type StringFormatHasHTML = string
+export type StringFormatWithReversesMailHasHTML = string
 export type FPApiSection =
     IFPApiSectionContact
   | IFPApiSectionFoundation
@@ -35,7 +36,7 @@ export interface IFPApiImage {
 export interface IFPApiSectionBase {
   status?: FPApiStatus
   title:  string
-  text: stringFormatHasHTML
+  text: StringFormatHasHTML
   type:
     "contact"
   | "evolution"
@@ -91,7 +92,7 @@ export interface IFPApiSectionPartners extends IFPApiSectionBase {
 export interface IFPApiSectionTimelineItems {
   date: string
   title: string
-  text: stringFormatHasHTML
+  text: StringFormatHasHTML
   categories: string
   cover: {[key: string]: IFPApiImage} | null
 }
@@ -100,7 +101,7 @@ export interface IFPApiSectionPartnerItems {
   "name": string
   "topic": string
   "link": string
-  "text": stringFormatHasHTML
+  "text": StringFormatWithReversesMailHasHTML
 }
 
 
@@ -108,7 +109,7 @@ export interface IFPApiSectionPeopleItems {
   "name": string
   "topic": string
   "link": string
-  "text": stringFormatHasHTML
+  "text": StringFormatWithReversesMailHasHTML
   "cover"?: {
     [key: string]: IFPApiImage
   }

@@ -22,9 +22,8 @@
     >{{peopleItem.topic}}</div>
 
     <div
-        v-html="peopleItem.text"
         class="v-people-item__text fp-remove-child-spacing"
-    ></div>
+    ><html-content-with-hash-mail :content="peopleItem.text" ></html-content-with-hash-mail></div>
 
     <a
         class="v-people-item__link fp-ui-external-link"
@@ -42,9 +41,10 @@ import {defineComponent} from "vue"
 import type {PropType} from "vue"
 import ImageMask from "./ImageMask.vue"
 import type {IFPApiSectionPeopleItems} from "@/froproApi/FPApi"
+import HtmlContentWithHashMail from "@/components/htmlContentWithHashMail.vue"
 
 export default defineComponent({
-  components: {ImageMask},
+  components: {HtmlContentWithHashMail, ImageMask},
   props: {
     peopleItem: {
       type: Object as PropType<IFPApiSectionPeopleItems>,
