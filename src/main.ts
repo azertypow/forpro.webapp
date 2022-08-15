@@ -1,14 +1,14 @@
 import './style/_main.scss'
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import {createApp} from 'vue'
+import {createPinia} from 'pinia'
 
 import App from './App.vue'
 import router from './router'
 import {useForProDataStore} from "@/stores/forProData"
 import type {IFPApi} from "@/froproApi/FPApi"
 import type {FpThemeName} from "@/forpro"
-import {FP_THEME_DEFAULT_VALUE, FP_THEME_NAME} from "@/forpro"
+import {FP_THEME_DEFAULT_VALUE, FP_THEME_LAST_DATE_USED, FP_THEME_NAME} from "@/forpro"
 
 const app = createApp(App)
 
@@ -39,18 +39,28 @@ function getNextFpTheme(value: FpThemeName): FpThemeName {
   }
 }
 
+function setStorage_FpThemeData({toNextThemeValue = false}) {
+  const themeName =
+    toNextThemeValue ?
+      getNextFpTheme(localStorage.getItem(FP_THEME_NAME) as FpThemeName)
+      : localStorage.getItem(FP_THEME_NAME) as FpThemeName
+
+  localStorage.setItem(FP_THEME_NAME, themeName)
+  localStorage.setItem(FP_THEME_LAST_DATE_USED, new Date().toString())
+}
+
 async function getFpThemeName(): Promise<FpThemeName> {
-  let storage_FpThemeName = localStorage.getItem(FP_THEME_NAME) as FpThemeName | null
+  if(localStorage.getItem(FP_THEME_NAME) === null)
+    setStorage_FpThemeData({})
 
-  if(storage_FpThemeName === null) {
-    localStorage.setItem(FP_THEME_NAME, FP_THEME_DEFAULT_VALUE as FpThemeName)
-    storage_FpThemeName = FP_THEME_DEFAULT_VALUE
-  }
-  else {
-    localStorage.setItem(FP_THEME_NAME, getNextFpTheme(storage_FpThemeName))
-  }
+  const lastDateInMS = new Date(localStorage.getItem(FP_THEME_LAST_DATE_USED) || '0').getTime()
+  const todayInMS =  new Date().getTime()
+  const hour24ToMS = 1000*60*60*24
 
-  return storage_FpThemeName
+  if( todayInMS - lastDateInMS > hour24ToMS)
+    setStorage_FpThemeData({toNextThemeValue: true})
+
+  return localStorage.getItem(FP_THEME_NAME) as FpThemeName
 }
 
 function setRootCssThemeValue(fpThemeName: FpThemeName) {
