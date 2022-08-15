@@ -1,3 +1,5 @@
+@import "00-sass_parameters";
+
 .fp-text-xxl {
   font-size: 14vw;
   line-height: 19vw;
@@ -44,7 +46,19 @@
   @include fp-text-h2;
 }
 
+@mixin fp-text-h3 {
+  line-height: 1rem;
+  font-size: .8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
 .fp-text-h3 {
+  @include fp-text-h3;
+}
+
+@mixin fp-text-h4 {
   line-height: 1rem;
   font-size: .8rem;
   margin-top: 2rem;
@@ -53,11 +67,7 @@
 }
 
 .fp-text-h4 {
-  line-height: 1rem;
-  font-size: .8rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 800;
+  @include fp-text-h4;
 }
 
 
@@ -69,10 +79,19 @@
   font-weight: 300;
 }
 
-.fp-text-p {
+@mixin fp-text-default {
   line-height: 1rem;
   font-size: .77rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-weight: 400;
+}
+
+.fp-text-p {
+  @include fp-text-default;
+}
+
+@mixin fp-text-small {
+  line-height: .9rem;
+  font-size: .65rem;
 }
