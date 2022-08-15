@@ -26,7 +26,7 @@
         name="fade-from"
     >
       <div
-          class="v-app-header__cach"
+          class="v-app-header__cache--menu"
           v-if="forProDataStore.menuIsOpen"
           @click="forProDataStore.menuIsOpen = false"
       ></div>
@@ -53,6 +53,26 @@
       </nav>
     </transition>
 
+    <transition
+        name="fade-from"
+    >
+      <div
+          class="v-app-header__cache--newsletter"
+          v-if="forProDataStore.newsletterIsOpen"
+          @click="forProDataStore.newsletterIsOpen = false"
+      ></div>
+    </transition>
+
+    <transition
+        name="fade-newsletter"
+    >
+      <section
+          class="v-app-header__newsletter-form"
+          v-if="forProDataStore.newsletterIsOpen"
+      >
+        <app-newsletter-form></app-newsletter-form>
+      </section>
+    </transition>
 
   </header>
 </template>
@@ -60,9 +80,10 @@
 <script lang="ts">
 import {defineComponent} from "vue"
 import {useForProDataStore} from "@/stores/forProData"
+import AppNewsletterForm from "@/components/AppNewsletterForm.vue"
 
 export default defineComponent({
-
+  components: {AppNewsletterForm},
   data() {
     return {
       forProDataStore: useForProDataStore()
@@ -115,7 +136,7 @@ export default defineComponent({
     }
   }
 
-  .v-app-header__cach {
+  .v-app-header__cache--menu {
     position: fixed;
     z-index: 10;
     width: 100%;
@@ -124,6 +145,12 @@ export default defineComponent({
     left: 0;
     background: black;
     opacity: .8;
+  }
+
+  .v-app-header__cache--newsletter {
+    @extend .v-app-header__cache--menu;
+    top: 0;
+    height: 100%;
   }
 
   .v-app-header__toggle-theme {
@@ -200,6 +227,19 @@ export default defineComponent({
     }
   }
 
+  .v-app-header__newsletter-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: var(--unit-gutter-half);
+  }
+
   .fade-from-right-enter-active,
   .fade-from-right-leave-active,
   {
@@ -221,6 +261,22 @@ export default defineComponent({
   .fade-from-leave-to,
   {
     opacity: 0;
+  }
+
+  .fade-newsletter-enter-active,
+  .fade-newsletter-leave-active,
+  {
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+  }
+  .fade-newsletter-enter-from,
+  {
+    opacity: 0;
+    transform: translate3d(-50%, calc( -50% + 5rem), 0);
+  }
+
+  .fade-newsletter-leave-to {
+    opacity: 0;
+    transform: translate3d(-50%, calc( -50% - 5rem), 0);
   }
 }
 

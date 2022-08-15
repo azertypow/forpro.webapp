@@ -8,9 +8,17 @@
       ></div>
 
       <div
-          v-html="forProDataStore.dataFPApi.footer.right"
           class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24"
-      ></div>
+      >
+        <div
+            class="fp-remove-child-spacing"
+            v-html="forProDataStore.dataFPApi.footer.right"
+        ></div>
+        <button
+            class="v-app-footer__newsletter fp-ui-button"
+            @click="forProDataStore.newsletterIsOpen = true"
+        >s'inscrire</button>
+      </div>
     </div>
   </div>
 </template>
@@ -55,6 +63,10 @@ export default defineComponent({
         margin-top: 2rem;
       }
     }
+  }
+
+  .v-app-footer__newsletter {
+    margin-top: 1rem;
   }
 }
 </style>

@@ -221,6 +221,7 @@ export default defineComponent({
 
 <style lang="scss">
 @import "../style/00-sass_parameters";
+@import "../style/01-typography";
 
 .v-section-plan {
   background-color: var(--color-background);
@@ -249,8 +250,7 @@ export default defineComponent({
       @media (max-width: $breakpoint--small) {
         padding-left: calc( var(--unit-gutter-half) / 2 );
         padding-right: calc( var(--unit-gutter-half) / 2 );
-        line-height: .9rem;
-        font-size: .65rem;
+        @include fp-text-small;
       }
     }
   }
@@ -293,8 +293,7 @@ export default defineComponent({
 
       @media (max-width: $breakpoint--small) {
         > * {
-          line-height: .9rem;
-          font-size: .65rem;
+          @include fp-text-small;
         }
       }
 
