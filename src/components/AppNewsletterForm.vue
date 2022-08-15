@@ -39,7 +39,7 @@ export default defineComponent({
   computed: {
     newsletterForm(): string | null {
       this.setValidFormListener()
-      return this.forProDataStore.newsletterForm
+      return this.forProDataStore.dataFPApi.newsletterCode
     }
   },
 

@@ -1,10 +1,12 @@
 export interface IFPApi {
   title: string
   footer: {
-    left: StringFormatHasHTML,
-    right: StringFormatHasHTML,
+    left: StringFormatHasHTML
+    right: StringFormatHasHTML
   }
   sections: {[key: string]: FPApiSection}
+  description: StringFormatHasHTML | null
+  newsletterCode: StringFormatHasHTML | null
 }
 
 // global
