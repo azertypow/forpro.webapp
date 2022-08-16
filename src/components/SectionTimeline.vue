@@ -16,8 +16,36 @@
 
       <div class="fp-grid-container" >
         <div
-          v-for="(item, index) of FPApiSectionEvolution.timeline"
+          v-for="(item, index) of eventPast"
           class="v-section-timeline__items__item-container fp-grid-coll-12-24"
+        >
+          <timeline-item
+              :FPApiSectionTimelineItems="item"
+              :styleAlternate="index % 2 !== 0"
+          ></timeline-item>
+        </div>
+      </div>
+    </div>
+
+    <div
+        class="v-section-timeline__separation fp-grid-coll-22-24 fp-grid-skip-1-24"
+    >
+      <div
+          class="v-section-timeline__separation__content fp-remove-child-spacing"
+      >
+        <div class="fp-text-h1">À venir</div>
+      </div>
+    </div>
+
+    <div
+        class="v-section-timeline__items v-section-timeline__items--future fp-remove-child-spacing fp-grid-coll-24-24"
+    >
+      <div class="v-section-timeline__items__lines"></div>
+
+      <div class="fp-grid-container" >
+        <div
+            v-for="(item, index) of eventFutur"
+            class="v-section-timeline__items__item-container fp-grid-coll-12-24"
         >
           <timeline-item
               :FPApiSectionTimelineItems="item"
@@ -35,6 +63,7 @@ import {defineComponent} from "vue"
 import type {PropType} from "vue"
 import TimelineItem from "@/components/TimelineItem.vue"
 import type {IFPApiSectionEvolution} from "@/froproApi/FPApi"
+import type {IFPApiSectionTimelineItems} from "@/froproApi/FPApi"
 
 export default defineComponent({
   components: {TimelineItem},
@@ -45,6 +74,20 @@ export default defineComponent({
       type: Object as PropType<IFPApiSectionEvolution>
     }
   },
+
+  computed: {
+    eventPast(): IFPApiSectionTimelineItems[] {
+      return this.FPApiSectionEvolution.timeline.filter(value => {
+        return Date.parse(value.date) < new Date().getTime()
+      })
+    },
+
+    eventFutur(): IFPApiSectionTimelineItems[] {
+      return this.FPApiSectionEvolution.timeline.filter(value => {
+        return Date.parse(value.date) > new Date().getTime()
+      })
+    },
+  }
 
 })</script>
 
@@ -60,6 +103,11 @@ export default defineComponent({
 
   .v-section-timeline__items {
     position: relative;
+    padding-bottom: 2rem;
+  }
+
+  .v-section-timeline__items--future {
+    padding-top: 2rem;
   }
 
   .v-section-timeline__items__lines {
@@ -90,6 +138,21 @@ export default defineComponent({
         margin-top: 2rem;
       }
     }
+  }
+
+  .v-section-timeline__separation {
+    padding-left: calc(var(--unit-gutter-half) / 2);
+    padding-right: calc(var(--unit-gutter-half) / 2);
+  }
+
+  .v-section-timeline__separation__content {
+    text-align: center;
+    color: var(--color-secondary);
+    padding-left: var(--unit-gutter-half);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+    box-shadow: inset var(--color-secondary) 0px -3px 0px 0px, inset var(--color-secondary) 0px 3px 0px 0px;
   }
 
   @media all and (max-width: $breakpoint--mobile) {
