@@ -72,18 +72,16 @@
   display: flex;
   text-decoration: none;
   align-items: center;
-  margin-top: .5rem;
 
   > * {
     display: block;
   }
 
   svg {
-    margin-left: .5em;
     top: .15em;
     position: relative;
     line-height: 1rem;
-    //margin: auto;
+    margin: auto;
     height: 1rem;
     width: auto;
     transform: rotateZ(0);

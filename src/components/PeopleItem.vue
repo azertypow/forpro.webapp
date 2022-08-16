@@ -1,7 +1,9 @@
 <template>
-  <div
+  <a
       class="v-people-item"
       :class="{'with-image': peopleItem.cover}"
+      :href="peopleItem.link"
+      target="_blank"
   >
     <div
         class="v-people-item__img"
@@ -25,15 +27,11 @@
         class="v-people-item__text fp-remove-child-spacing"
     ><html-content-with-hash-mail :content="peopleItem.text" ></html-content-with-hash-mail></div>
 
-    <a
+    <div
         class="v-people-item__link fp-ui-external-link"
         v-if="peopleItem.link"
-        :href="peopleItem.link"
-        target="_blank"
-    >
-      <span>Lien externe</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="48" width="48"><path d="M22.5 34H14q-4.25 0-7.125-2.875T4 24q0-4.25 2.875-7.125T14 14h8.5v3H14q-3 0-5 2t-2 5q0 3 2 5t5 2h8.5Zm-6.25-8.5v-3h15.5v3ZM25.5 34v-3H34q3 0 5-2t2-5q0-3-2-5t-5-2h-8.5v-3H34q4.25 0 7.125 2.875T44 24q0 4.25-2.875 7.125T34 34Z"/></svg>
-    </a>
-  </div>
+    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="48" width="48"><path d="M22.5 34H14q-4.25 0-7.125-2.875T4 24q0-4.25 2.875-7.125T14 14h8.5v3H14q-3 0-5 2t-2 5q0 3 2 5t5 2h8.5Zm-6.25-8.5v-3h15.5v3ZM25.5 34v-3H34q3 0 5-2t2-5q0-3-2-5t-5-2h-8.5v-3H34q4.25 0 7.125 2.875T44 24q0 4.25-2.875 7.125T34 34Z"/></svg></div>
+  </a>
 </template>
 
 <script lang="ts">
@@ -55,6 +53,8 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
+@import "../style/main";
+
 .v-people-item {
   display: block;
   text-decoration: none;
@@ -67,6 +67,16 @@ export default defineComponent({
   &:hover {
     .v-image-mask__img {
       transform: scale(.95);
+    }
+
+    .fp-ui-external-link {
+      svg {
+        transform: rotateZ(-10deg);
+
+        path {
+          fill: var(--color-secondary);
+        }
+      }
     }
   }
 
@@ -81,7 +91,12 @@ export default defineComponent({
     color: var(--color-secondary);
   }
 
-  .v-people-item__text {}
+  .v-people-item__text {
+    margin-bottom: .5rem;
+    .v-html-content-with-hash-mail {
+      @extend .fp-remove-child-spacing;
+    }
+  }
 
   .v-people-item__topic {
     font-weight: 800;
