@@ -19,7 +19,7 @@
         class="v-section-header__text fp-grid-container fp-max-width"
     >
       <div
-          class="v-section-header__text__container fp-with-gutter fp-remove-child-spacing fp-grid-coll-16-24 fp-grid-skip-1-24"
+          class="v-section-header__text__container fp-with-gutter fp-remove-child-spacing fp-grid-coll-22-24 fp-grid-skip-1-24"
           v-html="forProDataStore.dataFPApi.description"
       ></div>
     </div>
@@ -89,7 +89,9 @@ export default defineComponent({
 
   .v-section-header__text__container {
     p {
-      @include fp-text-h3;
+      line-height: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 500;
     }
   }
 

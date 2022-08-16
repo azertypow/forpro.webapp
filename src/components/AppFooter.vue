@@ -17,7 +17,7 @@
         <button
             class="v-app-footer__newsletter fp-ui-button"
             @click="forProDataStore.newsletterIsOpen = true"
-        >s'inscrire</button>
+        >S'inscrire</button>
       </div>
     </div>
   </div>
