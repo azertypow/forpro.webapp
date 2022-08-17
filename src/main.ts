@@ -50,8 +50,16 @@ function setStorage_FpThemeData({toNextThemeValue = false}) {
 }
 
 async function getFpThemeName(): Promise<FpThemeName> {
-  if(localStorage.getItem(FP_THEME_NAME) === null)
-    setStorage_FpThemeData({})
+
+  console.log(localStorage.getItem(FP_THEME_NAME))
+
+  if(
+    localStorage.getItem(FP_THEME_NAME) === null
+    || localStorage.getItem(FP_THEME_NAME) === 'null'
+  ) {
+    localStorage.setItem(FP_THEME_NAME, FP_THEME_DEFAULT_VALUE)
+    localStorage.setItem(FP_THEME_LAST_DATE_USED, new Date().toString())
+  }
 
   const lastDateInMS = new Date(localStorage.getItem(FP_THEME_LAST_DATE_USED) || '0').getTime()
   const todayInMS =  new Date().getTime()

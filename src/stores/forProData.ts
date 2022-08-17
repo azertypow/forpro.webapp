@@ -35,6 +35,6 @@ export interface IForProDataStore {
   dataFPApi: IFPApi
   ArrayOfSectionAnchor: string[]
   menuIsOpen: boolean
-  fpThemeName: FpThemeName | null
+  fpThemeName: FpThemeName
   newsletterIsOpen: boolean
 }
