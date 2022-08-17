@@ -86,8 +86,8 @@ export default defineComponent({
 
   @media all and (max-width: $breakpoint--mobile) {
     > * {
-      margin: 0;
-      width: 100%;
+      margin: 0 !important;
+      width: 100% !important;
     }
   }
 
