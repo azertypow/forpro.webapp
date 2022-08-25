@@ -95,3 +95,7 @@
   line-height: .9rem;
   font-size: .65rem;
 }
+
+.fp-text-small {
+  @include fp-text-small;
+}

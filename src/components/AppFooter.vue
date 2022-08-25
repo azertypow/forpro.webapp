@@ -18,6 +18,14 @@
             class="v-app-footer__newsletter fp-ui-button"
             @click="forProDataStore.newsletterIsOpen = true"
         >S'inscrire</button>
+        <div
+            class="v-app-footer__credit"
+        >
+          <p class="fp-text-small"
+          >Webdesign: Sonia&nbsp;Dominguez & Rob&nbsp;van&nbsp;Leijsen
+          <br>Développement: Nicolas&nbsp;Baldran
+          <br>Images du bâtiment et portraits d'apprenti·e·s: ©Alicia&nbsp;Dubuis</p>
+        </div>
       </div>
     </div>
   </div>
