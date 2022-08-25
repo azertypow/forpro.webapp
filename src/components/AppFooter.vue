@@ -21,7 +21,7 @@
         <div
             class="v-app-footer__credit"
         >
-          <p class="fp-text-small"
+          <p class="fp-text-xs"
           >Webdesign: Sonia&nbsp;Dominguez & Rob&nbsp;van&nbsp;Leijsen
           <br>Développement: Nicolas&nbsp;Baldran
           <br>Images du bâtiment et portraits d'apprenti·e·s: ©Alicia&nbsp;Dubuis</p>
@@ -52,6 +52,7 @@ export default defineComponent({
   min-height: 50vh;
   background-color: var(--themejs--background-color);
   color: var(--color-main--dark);
+  padding-bottom: 0rem !important;
 
   .v-app-footer__container {
     @media (max-width: $breakpoint--mobile) {

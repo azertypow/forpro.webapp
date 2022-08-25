@@ -99,3 +99,12 @@
 .fp-text-small {
   @include fp-text-small;
 }
+
+@mixin fp-text-xs {
+  line-height: .75rem;
+  font-size: .5rem;
+}
+
+.fp-text-xs {
+  @include fp-text-xs;
+}
