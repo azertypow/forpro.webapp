@@ -22,9 +22,9 @@
             class="v-app-footer__credit"
         >
           <p class="fp-text-xs"
-          >Webdesign: Sonia&nbsp;Dominguez & Rob&nbsp;van&nbsp;Leijsen
+          >Images du bâtiment et portraits d'apprenti·e·s: Alicia&nbsp;Dubuis
           <br>Développement: Nicolas&nbsp;Baldran
-          <br>Images du bâtiment et portraits d'apprenti·e·s: ©Alicia&nbsp;Dubuis</p>
+          <br>Webdesign: Sonia&nbsp;Dominguez & Rob&nbsp;van&nbsp;Leijsen</p>
         </div>
       </div>
     </div>
@@ -76,6 +76,10 @@ export default defineComponent({
 
   .v-app-footer__newsletter {
     margin-top: 1rem;
+  }
+
+  .v-app-footer__credit {
+    margin-top: 1.5rem;
   }
 }
 </style>
