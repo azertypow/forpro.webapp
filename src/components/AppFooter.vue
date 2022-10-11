@@ -3,9 +3,14 @@
     <div class="v-app-footer__container fp-grid-container fp-with-gutter fp-max-width">
 
       <div
-          v-html="forProDataStore.dataFPApi.footer.left"
-          class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24 fp-grid-skip-1-24"
-      ></div>
+        class="fp-with-gutter fp-grid-coll-11-24 fp-grid-skip-1-24"
+      >
+        <div
+            class="v-app-footer__container__left-content fp-remove-child-spacing"
+            v-html="forProDataStore.dataFPApi.footer.left"
+        ></div>
+        <linked-in-logo></linked-in-logo>
+      </div>
 
       <div
           class="fp-with-gutter fp-remove-child-spacing fp-grid-coll-11-24"
@@ -34,9 +39,10 @@
 <script lang="ts">
 import {defineComponent} from "vue"
 import {useForProDataStore} from "@/stores/forProData"
+import LinkedInLogo from "@/components/LinkedInLogo.vue"
 
 export default defineComponent({
-
+  components: {LinkedInLogo},
   data() {
     return {
       forProDataStore: useForProDataStore()
@@ -72,6 +78,10 @@ export default defineComponent({
         margin-top: 2rem;
       }
     }
+  }
+
+  .v-app-footer__container__left-content {
+    margin-bottom: 1rem;
   }
 
   .v-app-footer__newsletter {
