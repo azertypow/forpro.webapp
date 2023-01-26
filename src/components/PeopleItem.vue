@@ -2,7 +2,7 @@
   <a
       class="v-people-item"
       :class="{'with-image': peopleItem.cover}"
-      :href="peopleItem.link"
+      :href="peopleItem.link ? peopleItem.link : javascript:void(0)"
       target="_blank"
   >
     <div
