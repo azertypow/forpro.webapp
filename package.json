@@ -1,6 +1,7 @@
 {
   "name": "forpro.webapp",
   "version": "1.4.0",
+  "forpro.api.version": "1.*.*",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build --outDir docs/",
