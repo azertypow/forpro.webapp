@@ -5,6 +5,7 @@
     <div
         class="v-app-newsletter-form__close"
         @click="forProDataStore.newsletterIsOpen = false"
+        v-if="showUI"
     >
       <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -34,6 +35,10 @@ export default defineComponent({
     return {
       forProDataStore: useForProDataStore(),
     }
+  },
+
+  props: {
+      showUI: {type: Boolean, required: false, default: true}
   },
 
   computed: {

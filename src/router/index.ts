@@ -30,6 +30,11 @@ const router = createRouter({
       name: 'mail-signature-generator',
       component: () => import('../views/mailSignatureGenerator.vue')
     },
+    {
+      path: '/inscription-newsletter',
+      name: 'inscription-newsletter',
+      component: () => import('../views/NewsletterInscription.vue')
+    },
   ]
 })
 
